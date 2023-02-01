@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title>Rivalidades</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-family: arial;
+		}
+		.cabecalho{
+			width: 100%;
+			height: auto;
+			margin-top:15px ;
+			margin-bottom: 15px;
+			display: flex;
+			justify-content: space-between;
+
+		}
+		.titulo{
+			margin-left: 5px;
+		}
+		/*MENU*/
+		.menu{
+			width: 30%;
+			height: 30px;
+			max-height: 30px;
+			max-width: 30%;
+			margin: auto;
+			display: flex;
+			justify-content: space-evenly;
+			border: 1px solid grey;
+			margin-left: 30%;
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+			background-color:WHITE ;
+			color: #8e1a3d;
+		}
+
+		.comp{
+			text-align: center;
+			width: 20%;
+			height: 100%;
+			max-width: 20%;
+			margin-bottom: 3px;
+			border-right: 1px solid grey;
+		}
+
+		#contato{
+			border: none;
+		}
+
+
+		.comp:hover{
+			background:#e6ebed;
+			-moz-box-shadow:0 3px 10px 0#ffffff;
+			-webkit-box-shadow:0 3px 10px 0 #dff1f7;
+			text-shadow:0px 0px 5px #8e1a3d;
+		}
+		.txtComp{
+			font-size: 90%;
+			cursor: pointer;
+			margin-top: 6px;
+
+
+		}
+		.txtComp:hover{
+			text-decoration: underline;
+
+		}
+		/*CORPO*/
+		.container{
+			width: 70%;
+			margin:auto ;
+			margin-top:30px;
+			text-align: justify;
+			padding: 15px;
+			/*background-color: #DBDBDE;
+			box-shadow:6px 6px 6px #7f7f7f; 
+			border-radius: 20px;    */
+
+		}
+		/*IMAGENS*/
+		.boxImagemInicio{
+			width: 50%;
+			margin: auto;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		.imagemInicio{
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32);
+
+		}
+		.boxImagem{
+			width: 50%;
+			margin: auto;
+			margin-top: 15px;
+		}
+		.imagem{
+			width: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32) ;
+		}
+		.secoes{
+			margin-bottom: 30px;
+		}
+		h2{
+			text-align: justify;
+			font-weight: 500;
+		}
+		h3{
+			font-weight: 300;
+			margin-top: 15px;
+		}
+		/*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+                margin-top: 50px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="cabecalho">
+			<h1 class="titulo">Rivalidades Na Copa Do Mundo</h1>
+			<div class="menu">
+                <div class="comp" id="sobre">
+                    <section class="txtComp" id="txtSobre">Sobre</section>
+                </div>
+                <div class="comp" id="index">
+                    <section class="txtComp" id="txtIndex">Index</section>
+                </div>
+                <div class="comp" id="paginaCatar">
+                    <section class="txtComp" id="txtCatar">Catar</section>
+                </div>
+                <div class="comp" id="paginaBrasil">
+                    <section class="txtComp" id="txtBrasil">Brasil</section>
+                </div>
+                <div class="comp" id="contato">
+                    <section class="txtComp" id="txtContato">Contato</section>
+                </div> 
+            </div>      
+
+		</div>
+			<hr>
+	</header>
+		<div class="boxImagemInicio">
+			<img class="imagemInicio" src="https://s2.glbimg.com/Nt2J1BOoQ4rg1LTEsmGvEG1MWbU=/0x0:1080x608/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/S/A/HR5ezFRMmuNFimliMBPA/carrossel-memoria-copa.jpg" alt="Mural rivalidades">
+		</div>
+	<div class="container">
+		<h2>Brasil x Argentina</h2>
+		<p>Começando pelas clássicas. Além de serem países vizinhos, são duas das maiores fábricas de talentos do mundo. E isso, ao longo dos anos, só fez aumentar a discussão sobre quem tinha o melhor futebol do planeta e quem foi maior: Pelé ou Maradona. Nunca este posto de líder absoluto do ranking será tirado da rivalidade sul-americana.</p>
+		<p>A disputa entre as duas seleções é considerada um clássico nos campos, mas a famosa rivalidade tem origem antes mesmo dos dois países existirem e tem traços históricos.</p>
+		<h3>Origem</h3>
+		<p>A "briga" entre as duas nações começa antes meso da disputa nos campos de futebol, quando Espanha e Portugal se apossaram das terras da Argentina e Brasil e dividiram o território com o Tratado de Tordesilhas. Quando os dois países se tornaram independentes de seus colonizadores, a tensão aumentou com a Guerra da Cisplatina.</p>
+		<p>Nos campos, a disputa reflete o contexto histórico. Os títulos conquistados pelas duas seleções a partir da segunda metade dos anos 1950 colocaram em evidência as rivalidades. Também associada ao futebol está a questão de que havia uma disputa sobre quem seria o melhor jogador: Pelé, do Brasil, ou Maradona, da Argentina.</p>
+		<div class="boxImagem">
+				<img src="https://www.palpitediario.com.br/imagens/post/590/pele-x-maradona.png" alt="Pelé X Maradona" class="imagem">
+			</div>
+		<br>
+		<h2>Maradona contra a Inglaterra (México-1986)</h2>
+		<p>Ah, os gramados do México... Viram Pelé em sua plenitude e Maradona em toda sua genialidade. A Argentina conquistou o bicampeonato mundial contra a Alemanha mas o jogo mais lembrado da Copa de 1986 foi o das quartas de final: 2 a 1 sobre a Inglaterra, no Azteca (ô, estádio abençoado). Diego Maradona jogou os 90 minutos mais sublimes da sua carreira, com talento e malandragem em dois lances antológicos: o gol com La mano de Dios, enganando o goleiro Peter Shilton, o árbitro tunisiano Ali Bin Nasser e a tantos outros no estádio; e o "Gol do Século", partindo do seu campo até tocar para o gol na pequena área depois de driblar quatro rivais e o goleiro inglês. Dois lances geniais em um intervalo de cinco minutos - aos seis e dez do segundo tempo - que colocaram Maradona no Olimpo das Copas do Mundo.</p>
+		<div class="boxImagem">
+				<img src="https://i0.wp.com/trespontos.blog.br/wp-content/uploads/2017/06/MARADONA-1986-1.jpg" alt="Maradona comemora seu gol de mão" class="imagem">
+		</div>
+		<br>
+		<h2>Argentina X Inglaterra</h2>
+		<p>Mais do que o gol de mão e a pintura que o camisa 10 anotou na mesma partida, o duelo entre Inglaterra e Argentina transcendia o campo e envolvia uma disputa ainda maior. A disputa histórica das Malvinas.</p>
+		<h3>Origem</h3>
+		<p>Antes mesmo da Guerra das Malvinas, Inglaterra e Argentina já haviam se envolvido num episódio que acirrou os ânimos ingleses. O fato aconteceu durante a Copa do Mundo de 1966, disputada na Inglaterra. Após anos de fracasso, a Argentina tinha montado uma boa seleção para a disputa do torneio.</p>
+		<p>Antes mesmo da Guerra das Malvinas, Inglaterra e Argentina já haviam se envolvido num episódio que acirrou os ânimos ingleses. O fato aconteceu durante a Copa do Mundo de 1966, disputada na Inglaterra. Após anos de fracasso, a Argentina tinha montado uma boa seleção para a disputa do torneio. Capitaneada por Antonio Rattín, então jogador do Boca Juniors, a Albiceleste fez uma primeira fase de cartilha: venceu a Espanha na estreia por 2 a 1, segurou o 0 a 0 diante da Alemanha e fechou a fase de grupos vencendo a Suíça por 2 a 0. Pela primeira vez desde 1930, a Argentina conseguia passar da fase de grupos. Nas quartas de final, a esquadra argentina teria pela frente os anfitriões da Copa, a Inglaterra. Com um elenco com grandes jogadores, como Bobby Charlton e Bobby Moore, os ingleses eram favoritos para o confronto.</p>
+		<p>Antonio Rattín reclamou da marcação do juiz alemão Rudolf Kreitlen. O árbitro não conseguiu entender absolutamente nada do que disse o argentino, mas ao ver as expressões que o jogador estava fazendo, decidiu expulsá-lo de campo. Incrédulo, Rattín pediu um tradutor, mas nada fez o juiz mudar de ideia. Após 20 minutos de debate, o argentino saiu de campo e amassou levemente uma bandeira inglesa, irritando completamente a torcida inglesa. O resultado final foi vitória inglesa por 1 a 0. O tento foi marcado por Geoff Hurst, aos 33 minutos da etapa complementar. O resultado revoltou os torcedores argentinos, que se sentiram extremamente prejudicados com a injusta expulsão de seu capitão.</p>
+		<div class="boxImagem">
+				<img src="http://www.blogstartsports.com.br/wp-content/uploads/2018/06/ocasorattin.jpg" alt="Inglaterra X Argentina 1966" class="imagem">
+			</div>
+		<br>
+		<h3>Guerra Das Malvinas</h3>
+		<p>No entanto, foi um episódio extracampo que impulsionou o confronto de 1986 para níveis estratosféricos. Entre 2 de abril e 14 de junho de 1982, Argentina e Inglaterra travaram uma guerra sanguinária pela disputa das Malvinas. Localizada no Oceano Atlântico, perto da costa argentina, as ilhas Malvinas sempre foram motivos de conflitos. Ocupada em 1690, Reino Unido, França e Espanha sempre brigaram pelo domínio dos arquipélagos. E durante quase dois séculos o domínio mudou de mãos algumas vezes, até que, em 1833, o Reino Unido, enfim, tomou posse do território. O que quase ninguem esperava era que pouco mais de um século depois, as Malvinas seriam, novamente, alvo de disputa. Em 1965, a Argentina conseguiu que a ONU aprovasse a resolução 2065, que consistia no reconhecimento de uma disputa de soberania entre o Reino Unido e a Argentina sobre as Malvinas. Além disso, a resolução visava que as duas nações se reunissem e negociassem uma solução.</p>
+		<br>
+		<p>Na prática, no entanto, as negociações nunca avançaram muito. E por longos 17 anos a disputa se arrastou sem avanços significativos. Apesar disso, o clima entre os habitantes das ilhas, Argentina e Reino Unido era pacífico.O rumo da história, no entanto, começou a mudar no final dos anos 1970. A Argentina, e muitos países sul-americanos, atravessavam períodos de ditadura militar. Estruturada em cima do patriotismo, a ditadura argentina tinha as Malvinas como ponto central. Entretanto, a crise financeira se instalou no país. O modelo econômico dos militares estrangulou a nação das piores formas possíveis: a inflação chegou a 90% por ano, salários cada vez mais baixos, impostos banalizados, empobrecimento da classe média e tantos outros problemas começaram a afetar toda a nação.</p>
+		<p>A partir daí, só restou uma opção: retomar as Malvinas. A guerra, de fato, nunca foi declarada, mas o que aconteceu entre os dias 9 de abril e 14 de junho de 1982 deixou o mundo espantado. A Operação Corporate entrou em ação e com ela, Argentina e Inglaterra começavam a guerra. Durante o período, mortes aconteceram. O fato mais chocante foi o afundamento do cruzador General Belgrano, quando 323 marinheiros argentinos morreram após serem bombardeados por aviões britânicos. Somente às 23h59min do dia 14 de junho de 1982, o general Mario Benjamín Menéndez se rende nas ilhas Malvinas, colocando um ponto final na guerra. Ao todo, 904 soldados morreram, dos quais 649 eram argentinos e outros 255 eram britânicos. A vitória fortaleceu o governo de Thatcher no Reino Unido ao ponto de ajudar a Dama de Ferro a se reeleger em 1983, enquanto na Argentina, os reflexos da derrota acabaram derrubando de vez a já frágil ditadura militar.</p>
+		<div class="boxImagem">
+				<img src="https://www.politize.com.br/wp-content/uploads/2022/03/guerradasmalvinaspolitize2.jpeg" alt="Margareth Teacher nas Malvinas" class="imagem">
+			</div>
+			<br>
+			<br>
+		<h2>Momentos Marcantes</h2>
+		<h3>União de Paises Contra o Apartheid</h3>
+		<p>A história da Argélia acima ajuda a explicar parte do contexto africano nas décadas de 1950 e 1960. O continente passava por um momento de forte atividade política com vários países lutando por suas independências ou enfrentando graves guerras civis. Em meio a tudo isso, muitas nações novas-livres queriam se projetar para o mundo e o futebol seria uma ótima vitrine não fosse uma barreira imposta pela FIFA contra a qual os países africanos tiveram que lutar.</p>
+		<p>Na Copa de 1966, 16 seleções se classificavam para a competição. Um número que deveria ser suficiente para que a Copa do Mundo contasse com pelo menos um representante de cada continente. Isso, porém, não aconteceu, já que o melhor colocado nas eliminatórias africanas não garantia acesso direto, precisando passar ainda por uma espécie de repescagem contra um representante asiático em busca desse espaço.</p>
+		<div class="boxImagem">
+				<img src="https://i0.wp.com/trivela.com.br/wp-content/uploads/2017/01/mandela.jpg?fit=1600%2C900&ssl=1" alt="" class="imagem">
+		</div>
+		<br>
+		<h3>Uruguai, primeiro anfitrião e primeiro campeão (Uruguai-1930)</h3>
+		<p>Tudo começou no Uruguai. Então bicampeão olímpico (Paris-1924 e Amsterdã-1928), o país que dominava o futebol no início do século XX foi escolhido para organizar a primeira Copa do Mundo, em 1930, transformando em realidade o sonho do francês Jules Rimet. Apenas 13 seleções disputaram o torneio, e numa época em que as longas viagens eram feitas de navio, somente quatro europeus toparam o desafio de cruzar o Atlântico: França, Bélgica, Romênia e a então Iugoslávia. Junto com os anfitriões e mais oito países do continente americano (Estados Unidos, México, Brasil, Argentina, Chile, Paraguai, Bolívia e Peru), esses desbravadores deram o pontapé inicial numa paixão que conquistou o mundo. No dia 13 de julho, o francês Lucien Laurent marcou o primeiro gol das Copas, abrindo a goleada por 4 a 1 da sua seleção sobre o México, no Estádio Pocitos, em Montevidéu. No dia 30, a festa do futebol acabou com o gol de Héctor Castro, aos 44 do segundo tempo, o último do Uruguai na vitória por 4 a 2 sobre a Argentina na final. Primeira sede, o Uruguai deixava o Estádio Centenário, construído para a Copa, como o primeiro campeão mundial de futebol da história.</p>
+		<div class="boxImagem">
+				<img src="http://4.bp.blogspot.com/-TqPgEJ82AgA/VbpdjO7Z0uI/AAAAAAAAAWI/nA1DAgFmA8Q/s400/1930-uruguai-4-x-2-argentina-1.jpg" alt="" class="imagem">
+		</div>
+	</div>
+
+
+
+
+	<footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+    	diaMesAno=dataHoje();
+		function dataHoje(){
+			data=new Date();
+			dia=data.getDate();
+			mes=data.getMonth()+1;
+			ano=data.getFullYear();	
+			return [dia,mes,ano]
+		}
+		$(document).ready(function(){
+			$(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+		})
+        //menu
+        $("#txtIndex").click(function(){
+            $(location).prop('href','index.html');
+        })
+        $("#txtSobre").click(function(){
+            $(location).prop('href','SOBRE.html');
+        })
+        $("#txtContato").click(function(){
+            $(location).prop('href','form.html');
+        })
+        $("#txtBrasil").click(function(){
+            $(location).prop('href','paginaBrasil.html');
+        })
+        $("#txtCatar").click(function(){
+            $(location).prop('href','paginaCatar.html');
+        })
+      
+    </script>
+</body>
+</html>

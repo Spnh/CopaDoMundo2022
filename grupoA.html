@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo A</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+    
+        h1{
+            margin-top: 80px;
+            margin-bottom: 40px;
+            text-align:center;
+
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+        /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+            <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+    </div>
+        
+    <div class="container">
+        <h1 class="titulo">Grupo A</h1>    
+        <div class="tabela">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>CLASSIFICAÇÃO</th>
+                    <th>Pontos</th>
+                    <th>Jogos</th>
+                    <th>Vitorias</th>
+                    <th>Empate</th>
+                    <th>Derrota</th>
+                    <th>Gols feitos</th>
+                    <th>Gol sofridos </th>
+                    <th>Saldo de gol</th>
+                    <th>Porcentagem</th>
+                    <th>Ultimos Jogos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                    <td>
+                        <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/06/Catar.svg"><label class="nomePais">Catar</label>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/07/15/Equador.svg"> <label class="nomePais">Equador</label> 
+
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/16/Holanda.svg" alt="imagem Irã"><label class="nomePais">Holanda</label></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Senegal.svg" alt="imagem País de Gales"><label class="nomePais">Senegal</label> 
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+         <div class="secaoPaises">
+            <h2>Catar</h2>
+            <p class="descPais">O Catar sediará a Copa do Mundo FIFA de 2022, e consequentemente participará de sua primeira Copa com a sua seleção. Em 2019, o Catar conquistou o título mais importante de sua história, a Copa da Ásia de 2019, vencendo o Japão, por 3–1. A final foi disputada em Dubai, nos Emirados Árabes Unidos.
+            </p>
+            <h2>Equador</h2>
+            <p class="descPais">A seleção equatoriana participará de sua quarta edição da Copa do Mundo de Futebol em 2022. Os equatorianos estiveram nos mundiais de 2002, 2006 e 2014. O melhor desempenho da seleção do Equador foi quando chegou às oitavas de final em 2006. O Equador ainda não sediou a Copa do Mundo de Futebol<br>A seleção do Equador está no Grupo A da 1ª Fase da Copa do Mundo de 2022. Os adversários do Equador são: Catar, Holanda (Países Baixos) e Senegal, definidos sorteio da Copa do Mundo de 2022. Os jogos do Equador na 1º Fase serão em Al Khor e Al Rayyan.
+            <br>
+            Os Estados Unidos sediaram a Copa do Mundo de Futebol em 1994 e voltarão a sediar a Copa do Mundo em 2026, desta vez juntamente com o Canadá e o México.
+            A seleção dos Estados Unidos está no Grupo B da 1ª Fase da Copa do Mundo de 2022. Os adversários dos Estados Unidos são: País de Gales, Inglaterra e Irã, definidos sorteio da Copa do Mundo de 2022. Os jogos dos Estados Unidos na 1º Fase serão em Al Khor, Al Rayyan e Doha.
+            </p>
+            <h2>Holanda</h2>
+            <p class="descPais">A seleção holandesa participará de sua décima edição da Copa do Mundo de Futebol em 2022. A seleção de futebol masculino dos Países Baixos é conhecida como Oranje, Holanda, Laranja Mecânica, entre outros apelidos. A seleção holandesa foi três vezes vice-campeã (1974, 1978 e 2010), terceira colocada em 2014 e quarta colocada em 1998, mas ainda não foi campeã do mundo. A Laranja Mecânica de Rep, Cruijff, Brandts, Haan e Rensenbrink encantou o mundo com um sistema de jogo revolucionário. Na Eurocopa a seleção da Holanda foi campeã em 1988, contando com os craques Marco van Basten, Rijkaard, Koeman e Gullit.<br>A seleção da Holanda (Países Baixos) está no Grupo A da 1ª Fase da Copa do Mundo de 2022. Os adversários da Holanda são: Senegal, Equador e Catar, definidos sorteio da Copa do Mundo de 2022. Os jogos da Seleção dos Países Baixos na 1º Fase serão em Al Khor, Al Rayyan e Doha.</p>
+            <h2>Senegal</h2>
+            <p class="descPais">A seleção senegalesa participará de sua terceira edição da Copa do Mundo de Futebol em 2022. O Senegal participou de sua primeira Copa do Mundo em 2002, quando chegou às quartas-de-final. Na sua segunda participação, em 2018, o Senegal não passou da Primeira Fase. Os senegaleses participaram 16 vezes da Copa das Nações Africanas, sendo campeões em 2021 e vice-campeões em 2002 e 2019. A seleção do Senegal é conhecida como os Leões de Teranga.A seleção do Senegal está no Grupo A da 1ª Fase da Copa do Mundo de 2022. Os adversários do Senegal são: Holanda (Países Baixos), Catar e Equador, definidos sorteio da Copa do Mundo de 2022. Os jogos do Senegal na 1º Fase serão em Al Rayyan e Doha.</p>
+        </div>
+    </div>        
+    <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+       <script type="text/javascript">
+            diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })
+
+                //Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script>    
+</body>
+</html>

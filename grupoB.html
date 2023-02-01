@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo B</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+        h1{
+             margin-top: 80px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+        .tabela{
+            /*width: 30%;
+            height: auto;
+            margin: auto;*/
+        }
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+         /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+             <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+           
+    </div>
+        <div class="container">
+            <h1 class="titulo">Grupo B</h1>
+            <div class="tabela">
+                <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>CLASSIFICAÇÃO</th>
+                        <th>Pontos</th>
+                        <th>Jogos</th>
+                        <th>Vitorias</th>
+                        <th>Empate</th>
+                        <th>Derrota</th>
+                        <th>Gols feitos</th>
+                        <th>Gol sofridos </th>
+                        <th>Saldo de gol</th>
+                        <th>Porcentagem</th>
+                        <th>Ultimos Jogos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row">
+                        <td>
+                            <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/13/Inglaterra.svg" alt="imagem Inglaterra"><label class="nomePais">Inglaterra</label>
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/16/Estados_Unidos.svg" alt="imagem Estados Unidos"> <label class="nomePais">Estados Unidos</label> 
+
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/01/Ir%C3%A3.svg" alt="imagem Irã"><label class="nomePais">Irã</label></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/17/Pa%C3%ADs_de_Gales.svg" alt="imagem País de Gales"><label class="nomePais">País de Gales</label> 
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+            <div class="secaoPaises">
+                <h2>Inglaterra</h2>
+                <p class="descPais">A seleção inglesa participará de sua 16ª edição da Copa do Mundo de Futebol em 2022. A seleção de futebol masculino da Inglaterra é conhecida como The Three Lions (Os três leões).A Seleção da Inglaterra é a mais antiga de todas as seleções de futebol, já tendo sediado a Copa do Mundo em 1966, em Londres, a capital do Reino Unido.
+                A seleção da Inglaterra está no Grupo B da 1ª Fase da Copa do Mundo de 2022. Os adversários da Inglaterra são: Irã, Estados Unidos e País de Gales, definidos sorteio da Copa do Mundo de 2022. Os jogos da Inglaterra na 1º Fase serão em Al Khor e Al Rayyan.
+                Confira a campanha da Seleção da Inglaterra na Copa do Mundo de 2022 com data, horário e local dos jogos da Inglaterra para você assistir na tv ou acompanhar pelos sites da internet. Além da programação dos jogos da Seleção da Inglaterra da Copa do Mundo de 2022 que forem televisionados.
+                </p>
+                <h2>Estados unidos</h2>
+                <p class="descPais">A seleção norte-americana participará de sua 11ª edição da Copa do Mundo de Futebol em 2022. A melhor colocação da seleção dos Estados Unidos foi o 3º lugar na Copa do Mundo de 1930. Depois de ficarem 40 anos sem participar da Copa do Mundo os Estados Unidos redescobriram o soccer (como eles chamam o futebol) e de 1990 a 2014 participaram de seis Mundiais consecutivos. Em 2018, os Estados Unidos ficaram de fora do Mundial, após não conseguirem se classificar nas Eliminatórias da CONCACAF, mas retornam em 2022. O esporte cresce no país, assim como melhoram as participações de sua seleção. Os americanos conquistaram sete vezes a Copa Ouro e chegaram ao vice-campeonato da Copa das Confederações em 2009.
+                    <br>
+                    Os Estados Unidos sediaram a Copa do Mundo de Futebol em 1994 e voltarão a sediar a Copa do Mundo em 2026, desta vez juntamente com o Canadá e o México.
+                    A seleção dos Estados Unidos está no Grupo B da 1ª Fase da Copa do Mundo de 2022. Os adversários dos Estados Unidos são: País de Gales, Inglaterra e Irã, definidos sorteio da Copa do Mundo de 2022. Os jogos dos Estados Unidos na 1º Fase serão em Al Khor, Al Rayyan e Doha.
+                </p>
+                <h2>Irã</h2>
+                <p class="descPais">A seleção iraniana participou pela primeira vez da Copa do Mundo em 1978. Em todas as participações (1978, 1998, 2006, 2014 e 2018) o Irã foi eliminado na Primeira Fase da Copa do Mundo de Futebol. A seleção do Irã está no Grupo B da 1ª Fase da Copa do Mundo de 2022. Os adversários do Irã são: Inglaterra, País de Gales e Estados Unidos, definidos sorteio da Copa do Mundo de 2022. Os jogos do Irã na 1º Fase serão em Al Rayyan e Doha.<br>A seleção do Irã ficou em 3º lugar no Grupo B da 1ª Fase da Copa do Mundo de 2018 e foi eliminada na 1º Fase da competição. Os adversários do Irã foram: Portugal, Marrocos e Espanha, definidos sorteio da Copa do Mundo de 2018. Os jogos do Irã na 1º Fase foram em São Petersburgo, Cazã e Saransk.</p>
+                <h2>Pais de Gales</h2>
+                <p class="descPais">o País de Gales volta à Copa do Mundo depois de 64 anos. A última e única participação dos galeses na competição foi em 1958, quando caiu para o Brasil nas quartas de final. Np Catar.</p>
+            </div>
+            
+            <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+           <script type="text/javascript">
+               diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })
+                //Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script> 
+</body>
+</html>

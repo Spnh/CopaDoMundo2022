@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+        body{
+        font-family: Arial, Helvetica, sans-serif;
+
+       
+        
+        }
+        /*CABECALHO*/
+                .cabecalho{
+                    width: 100%;
+                    height:auto;
+                    margin: auto;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .titulo{
+                    width: 40%;
+                    max-width: 40%;
+                    padding-top:20px;
+                    padding-left: 5px;
+                }
+                .direita{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 7%;
+                    max-width: 7%;
+
+                }
+                input[type="checkbox"] {
+                  height: 0;
+                  width: 0;
+                  visibility: hidden;
+                }
+
+                label {
+                  cursor: pointer;
+                  text-indent: -9999px;
+                  width: 50px;
+                  height: 30px;
+                  background: #8e1a3d;
+                  display: block;
+                  border-radius: 100px;
+                  position: relative;
+                }
+
+                label:after {
+                  content: "";
+                  position: absolute;
+                  top: 5px;
+                  left: 5px;
+                  width: 20px;
+                  height: 20px;
+                  background: #fff;
+                  border-radius: 90px;
+                  transition: 0.2s;
+                }
+                input:checked + label {
+                  background: #424242;
+                }
+
+                input:checked + label:after {
+                  left: calc(100% - 5px);
+                  transform: translateX(-100%);
+                }
+
+                label:active:after {
+                  width: 40px;
+                }
+                
+                
+                .iconePais{
+                  height: 30px;
+                  width: auto;
+                  border: gray 1px solid;
+                  border-radius: 6px;
+                  margin-left: 5px;  
+                  margin-top:5px;
+                  margin-bottom:5px;
+                  cursor: pointer;
+                }
+                .iconePais:hover{
+                    border-top:1px solid black ;
+                    border-right:1px solid black ;
+                    border-left:1px solid black ;
+                    border-bottom: 1px solid lightgrey;
+                }
+                .fixa{
+                    height: 60px;   
+                }
+                /*MENU*/
+                         .menu{
+                            width: 40%;
+                            height: 30px;
+                            max-height: 30px;
+                            max-width: 40%;
+                            margin: auto;
+                            margin-top: 20px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            border: 1px solid grey;
+                            margin-left: 30%;
+                            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+                            background-color:WHITE ;
+                            color: #8e1a3d;
+                        }
+
+                        .comp{
+                            text-align: center;
+                            width: 20%;
+                            height: 100%;
+                            max-width: 20%;
+                            margin-bottom: 3px;
+                            border-right: 1px solid grey;
+                        }
+                        
+                        #contato{
+                            border: none;
+                        }
+                       
+
+                        .comp:hover{
+                            background:#e6ebed;
+                            -moz-box-shadow:0 3px 10px 0#ffffff;
+                            -webkit-box-shadow:0 3px 10px 0 #dff1f7;
+                            text-shadow:0px 0px 5px #9e1840;
+                        }
+                        .txtComp{
+                            font-size: 90%;
+                            cursor: pointer;
+                            margin-top: 6px;
+
+
+                        }
+                        .txtComp:hover{
+                           text-decoration: underline;
+                          
+                        }
+        /*CORPO*/
+                .container{
+                    margin: 15px;
+                    background-color: #DBDBDE;
+                    box-shadow:6px 6px 6px #7f7f7f; 
+                    border-radius: 20px;    
+                }
+                .textoImg{
+                    display: flex;
+                    justify-content: space-around;
+
+                }
+                .imgIndex{
+                    margin-right: 15px;
+                    padding-top: 17px;
+                    margin-bottom: 15px;
+                }
+                .paragrafoImg{
+                    margin: 15px;
+                    text-align: justify;
+                }
+                .paragrafo3Img{
+                    margin-top: -10px;
+                    margin-left: 15px;
+                    text-align: justify;
+                    margin-right:15px ;
+                }
+                    /*GRUPOS*/
+                            .secaoGrupo{
+                                margin: 15px;
+                            }
+                            .secaoLista{
+                                margin: 5px;
+
+                            }
+                            .secaoLista h2{
+                                margin: 5px;
+                                color: #8e1a3d;
+                            }
+                            .fila1{
+                                display: flex;
+                                justify-content: space-around;
+                                margin-bottom: 15px;
+                            }
+                            .fila2{
+                                display: flex;
+                                justify-content: space-around;
+                                margin-top: 15px;
+                                margin-bottom: 60px;
+                            }
+                            .cartaGrupo h2{
+                                text-align:center ;
+                            }
+                            .cartaGrupo p{
+                                text-align:justify ;
+                                 list-style: none;
+                                margin:5px;
+                                font-size: 15px;
+                            }
+                           .cartaGrupo p:hover{
+                                color: gray;
+                                text-decoration: underline;
+                            }
+                            .pstaGrupos:hover{
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                    /*SECAO DE BAIXO*/
+                            .mascote{
+                                margin: auto;
+                                max-width: 40%;
+                                width: 40%;
+                                padding-bottom: 15px;
+                                height: auto;
+                            }
+                            .subMascote{
+                                margin: 15px;
+                            }
+                            video{
+                                max-width: 100%;
+                                height: auto;
+                                margin: auto;   
+                            }
+                            .quadro{
+                                width: 70%;
+                                height: 450px;
+                                margin: auto;
+                                background-color: white;
+                                border-radius: 25px;
+                                border: 1px solid black;
+                            }
+                            .quadro2{
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 25px;
+                                cursor: pointer;
+                                
+                            }
+
+
+       
+        /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+                margin-top: 50px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+        /*DARKMODE*/
+                .tema{
+                    padding: 8px 18px;
+                }       
+
+                .dark{
+                    color: whitesmoke;
+                    background-color: #222122;
+                }
+                .dark .menu{
+                    background-color: #c69448 ;
+                    color:white;
+                    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+                }
+                .dark .container{
+                    color: white;
+                    background-color: #21233a;
+                    box-shadow:6px 6px 6px rgb(8, 11, 32) ;
+
+                }
+                .dark .comp:hover{
+                     background:#e0ad62;
+                    -moz-box-shadow:0 3px 10px 0#ffffff;
+                    -webkit-box-shadow:0 3px 10px 0 #dff1f7;
+                    text-shadow:0px 0px 5px  #846230;
+                }
+                .dark .secaoLista h2{
+                    color: #c69448;
+                }
+                .dark .secaoLista h2:hover{
+                    color: #e0ad62;
+                }
+                .dark .rodape{
+                    color: white;
+                    background-color:#21233a ;
+                    border-top: 1px solid white;
+                }
+
+        
+        
+    </style>
+                                  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Copa Do Mundo</title>
+
+</head>
+<body>
+    <div class="cabecalho">
+        <h1 class="titulo">Copa Do Mundo FIFA</h1>
+        
+            <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <section class="txtComp" id="txtSobre">Sobre</section>
+                </div>
+                <div class="comp" id="paginaBrasil">
+                    <section class="txtComp" id="txtPaginaBrasil">Brasil</section>
+                </div>
+                <div class="comp" id="paginaCatar">
+                    <section class="txtComp" id="txtCatar">Catar</section>
+                </div>
+                <div class="comp" id="rivalidades">
+                    <section class="txtComp" id="txtRivalidades">Rivalidades</section>
+                </div>
+                <div class="comp" id="contato">
+                    <section class="txtComp" id="txtContato">Contato</section>
+                </div> 
+            </div>      
+
+            <div class="direita">
+                <!-- <div class="data"></div> -->
+                <div class="tema">
+                    <input onclick="mudaTema()" class="tema" type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                </div>
+            </div>
+
+    </div>
+        <div class="fixa">
+        <marquee class="faixa"direction="right" hspace="auto" behavior="scroll">
+            <!-- quando clicar, ir para a página do grupo e ir automaticamente para o país -->
+            <!--grupo A-->
+            <img id="catar" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/06/Catar.svg" alt="imagem Catar">
+
+            <img id="equador" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/15/Equador.svg" alt="imagem Equador">
+
+            <img id="holanda" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/16/Holanda.svg" alt="imagem Holanda">
+
+            <img id="senegal" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Senegal.svg" alt="imagem Senegal">
+
+            <!--grupo B-->
+            <img id="inglaterra" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/13/Inglaterra.svg" alt="imagem Inglaterra">
+
+            <img id="ira" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/01/Ir%C3%A3.svg" alt="imagem Irã">
+
+            <img id="estadosUnidos" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/16/Estados_Unidos.svg" alt="imagem Estados Unidos">
+            <img id="paisDeGales" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/17/Pa%C3%ADs_de_Gales.svg" alt="imagem Pais de Gales">
+
+            
+            <!--grupo C-->
+            <img id="argentina" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/15/Argentina.svg" alt="imagem Argentina">
+
+            <img id="arabiaSaudita" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/05/Ar%C3%A1bia_Saudita.svg" alt="imagem Arabia Saudita">
+
+            <img id="mexico" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/15/M%C3%A9xico.svg" alt="imagem México">
+
+            <img id="polonia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/02/Polonia_Rl0m1A5.svg" alt="imagem Polônia">
+
+
+            <!--grupo D-->
+            <img id="dinamarca" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/16/Dinamarca.svg" alt="imagem Dinamarca">
+
+            <img id="tunisia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2018/03/10/tunisia.svg" alt="imagem Tunísia">
+
+            <img id="franca" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Fran%C3%A7a.svg" alt="imagem França">
+
+            <img id="australia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/02/Australia.svg" alt="imagem Australia">
+
+
+            <!--grupo E-->
+            <img id="alemanha" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Alemanha.svg" alt="imagem Alemanha">
+
+            <img id="japao" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Japao.svg" alt="imagem Japão">
+
+            <img id="espanha" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/03/Espanha.svg" alt="imagem Espanha">
+
+            <img id="costaRica" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/14/Costa_Rica.svg" alt="imagem Costa Rica">
+
+
+            <!--grupo F-->
+            <img id="marrocos" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/10/Marrocos.svg" alt="imagem Marrocos">
+
+            <img id="croacia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/16/Cro%C3%A1cia.svg" alt="imagem Croácia">
+
+            <img id="belgica" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/15/B%C3%A9lgica.svg" alt="imagem Belgica">
+
+            <img id="canada" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/15/Canad%C3%A1.svg" alt="imagem Canadá">
+
+            <!--grupo G-->
+            <img id="suica" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/15/Su%C3%AD%C3%A7a.svg" alt="imagem Suíça">
+
+            <img id="camaroes" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/10/Camar%C3%B5es.svg" alt="imagem Camarões">
+
+            <img id="brasil" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/16/Brasil_rgYHF6Z.svg" alt="imagem Brasil">
+
+            <img id="servia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/02/Servia.svg" alt="imagem Sérvia">
+ 
+            <!--grupo H-->
+            <img id="uruguai" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/16/Uruguai.svg" alt="imagem Uruguai">
+
+            <img id="coreia" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/01/Coreia_do_Sul.svg" alt="imagem Coreia">
+
+            <img id="portugal" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/17/Portugal.svg" alt="imagem Portugal">
+
+            <img id="gana" class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/08/Gana.svg" alt="imagem Gana">
+
+        </marquee>        
+
+        <hr>
+    </div>
+    
+    <div class="container">
+        <div class="textoImg">
+                <div class="paragrafoImg">
+                    <p>O maior evento de esportes do mundo irá acontecer em breve. Após quatro anos, será realizado A Copa do Mundo é uma competição internacional organizada pela Federação Internacional de Futebol a cada quatro anos. A Copa passou a ser realizada em 1930, com a primeira competição sediada pelo Uruguai. A escolha da nação-sede é determinada em eleições feitas pela própria Fifa.A Copa do Mundo é um dos maiores eventos esportivos do planeta e, a cada quadriênio, bilhões de pessoas assistem aos jogos realizados. As edições de 2010 (que ocorreu na África do Sul) e 2014 (no Brasil) contaram com cerca de 3,2 bilhões de espectadores, segundo dados compartilhados pela Fifa. A final da Copa do Mundo de 2014 registrou, sozinha, aproximadamente 1 bilhão de espectadores.
+                    <span class="paragrafo2Img"> A primeira Copa do Mundo aconteceu em 1930, após muitos anos de tentativas de se organizar uma competição mundial de futebol. O início do evento está diretamente ligado ao surgimento da Fifa e sua atuação na popularização e profissionalização do futebol. A Federação foi fundada em 1904 e contou com a adesão inicial das seguintes nações: Bélgica, Dinamarca, França, Holanda, Espanha, Suécia e Suíça.
+                    </span>
+                    </p>
+                </div>
+                <div class="imgIndex">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV60QbozpZoDwfwex4zsb_cBZsAoOXRqE1Tw&usqp=CAU">
+                </div>
+        </div>
+        <p class="paragrafo3Img">
+                    Os primeiros esforços na direção de se organizar uma competição como a Copa do Mundo foram realizados por um dos idealizadores da Fifa, o holandês Carl Anton Wilhelm Hirschman. Contudo, o grande responsável pela realização da primeira Copa do Mundo foi Jules Rimet, presidente da Fifa durante mais de trinta anos. Os esforços de Jules Rimet concentraram-se na década de 1920, principalmente após o sucesso da competição de futebol realizada nos Jogos Olímpicos de 1924 e 1928 – ambos vencidos pelo Uruguai. A partir daí, as negociações pela realização de uma competição de futebol desvinculada do Comitê Olímpico Internacional (COI) intensificaram-se.
+                </p>
+
+            <div class="secaoGrupo">
+                <h2>Divisão por Gurpos</h2>
+                <p>Com trinta e dois paises, as seleções são divividas em grupos de quatro, resultando em oito grupos, sendo desiguinadas letras do alfabeto para nomea-los, indo de A até H. Com o país sede fazendo parte do grupo A.</p>
+               <div class="secaoLista">
+                    <span class="fila1">
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoA">Grupo A</h2>
+
+                            <p>Catar</p>
+                            <p>Equador</p>
+                            <p>Holanda</p>
+                            <p>Senegal</p>
+
+                    </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoB">Grupo B</h2>
+
+                            <p>Inglaterra</p>
+                            <p>Estados Unidos</p>
+                            <p>Irã</p>
+                            <p>País de Gales</p>
+                </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoC">Grupo C</h2>
+
+                            <p>Argentina</p>
+                            <p>Arábia Saudita</p>
+                            <p>México</p>
+                            <p>Polônia</p>
+                </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos " id="grupoD">Grupo D</h2>
+
+                            <p>França</p>
+                            <p>Austrália</p>
+                            <p>Dinamarca</p>
+                            <p>Tunísia</p>
+                </div>
+                </span>
+                <span class="fila2">
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoE">Grupo E</h2>
+
+                            <p>Espanha</p>
+                            <p>Costa Rica</p>
+                            <p>Alemanhã</p>
+                            <p>Japão</p>
+                </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoF">Grupo F</h2>
+
+                            <p>Belgica</p>
+                            <p>Canadá</p>
+                            <p>Marrocos</p>
+                            <p>Croacia</p>
+                </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoG">Grupo G</h2>
+
+                            <p>Brasil</p>
+                            <p>Sérvia</p>
+                            <p>Suiça</p>
+                            <p>Camarões</p>
+                </div>
+                    <div class="cartaGrupo">
+                        <h2 class="pstaGrupos" id="grupoH">Grupo H</h2>
+                        <p>Portugal</p>
+                        <p>Gana</p>
+                        <p>Uruguai</p>
+                        <p>Coréia do Sul</p>
+                </div>
+                </span>
+                </div>
+            </div>
+            <h2 class="subMascote">As Copas Anteriores</h2>
+                <div class="quadro">
+                    <img class="quadro2" src="https://media.discordapp.net/attachments/1022130701325320204/1026659636113322045/unknown.png?width=876&height=409"/>
+                </div>
+        <h2 class="subMascote">Mascote oficial da Copa do Mundo 2022</h2>
+            <div class="mascote">
+                <!-- <video  autoplay controls>
+                    <source src="video/videoIndex.mp4" type="video/mp4">
+                </video> -->
+                <iframe class="videoMascote" width="560" height="315" src="https://www.youtube.com/embed/OC3PXKuFgLA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+    </div>
+    <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        diaMesAno=dataHoje();
+        function dataHoje(){
+            data=new Date();
+            dia=data.getDate();
+            mes=data.getMonth()+1;
+            ano=data.getFullYear(); 
+            return [dia,mes,ano]
+        }
+        $(document).ready(function(){
+           $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+        })
+        //imagens
+        $("#catar,#equador,#holanda,#senegal").click(function(){
+        $(location).prop('href','grupoA.html');
+        })
+         $("#inglaterra,#ira,#estadosUnidos,#paisDeGales").click(function(){
+            $(location).prop('href','grupoB.html');
+         })
+         $("#argentina,#arabiaSaudita,#mexico,#polonia").click(function(){
+            $(location).prop('href','grupoC.html');
+         })       
+        $("#dinamarca,#tunisia,#franca,#autralia").click(function(){
+            $(location).prop('href','grupoD.html');
+        })
+        $("#alemanha,#japao,#espanha,#costaRica").click(function(){
+            $(location).prop('href','grupoE.html');
+        })
+        $("#marrocos,#croacia,#belgica,#canada").click(function(){
+            $(location).prop('href','grupoF.html');
+        })
+        $("#suica,#camaroes,#brasil,#sevia").click(function(){
+            $(location).prop('href','grupoG.html');
+        })
+        $("#uruguai,#coreia,#portugal,#gana").click(function(){
+            $(location).prop('href','grupoH.html');
+        })
+    
+
+        //lista Grupos
+        $("#grupoA").click(function(){
+            $(location).prop('href','grupoA.html');
+        })
+        $("#grupoB").click(function(){
+            $(location).prop('href','grupoB.html');
+        })
+        $("#grupoC").click(function(){
+            $(location).prop('href','grupoC.html');
+        })
+        $("#grupoC").click(function(){
+            $(location).prop('href','grupoC.html');
+        })
+        $("#grupoD").click(function(){
+            $(location).prop('href','grupoD.html');
+        })
+        $("#grupoD").click(function(){
+            $(location).prop('href','grupoD.html');
+        })
+        $("#grupoF").click(function(){
+            $(location).prop('href','grupoF.html');
+        })
+        $("#grupoG").click(function(){
+            $(location).prop('href','grupoG.html');
+        })
+        $("#grupoH").click(function(){
+            $(location).prop('href','grupoH.html');
+        })    
+    
+
+        //menu
+        $("#txtIndex").click(function(){
+            $(location).prop('href','index.html');
+        })
+        $("#txtSobre").click(function(){
+            $(location).prop('href','SOBRE.html');
+        })
+        $("#txtContato").click(function(){
+            $(location).prop('href','form.html');
+        })
+        $("#txtPaginaBrasil").click(function(){
+            $(location).prop('href','paginaBrasil.html');
+        })
+        $("#txtCatar").click(function(){
+            $(location).prop('href','paginaCatar.html');
+        })
+        $("#txtRivalidades").click(function(){
+            $(location).prop('href','rivalidades.html');
+        })
+
+
+        $(".quadro2").click(function(){
+            $(location).prop('href','Sedes.html');
+        })        
+        function mudaTema(){
+    document.body.classList.toggle("dark")
+}
+    </script>          
+</body>
+</html>

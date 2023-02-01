@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo H</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+    
+        h1{
+            margin-top: 80px;
+            margin-bottom: 40px;
+            text-align:center;
+
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+         /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+                .linkVideo{
+                    color: black;
+                    
+                    font-weight: bold;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+            <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+    </div>
+        
+    <div class="container">
+        <h1 class="titulo">Grupo H</h1>    
+        <div class="tabela">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>CLASSIFICAÇÃO</th>
+                    <th>Pontos</th>
+                    <th>Jogos</th>
+                    <th>Vitorias</th>
+                    <th>Empate</th>
+                    <th>Derrota</th>
+                    <th>Gols feitos</th>
+                    <th>Gol sofridos </th>
+                    <th>Saldo de gol</th>
+                    <th>Porcentagem</th>
+                    <th>Ultimos Jogos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                    <td>
+                        <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/01/Coreia_do_Sul.svg"><label class="nomePais">Coreia do sul</label>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/08/Gana.svg"> <label class="nomePais">Gana</label> 
+
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/17/Portugal.svg" alt="imagem Portugal"><label class="nomePais">Portugal</label></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/07/16/Uruguai.svg" alt="imagem Uruguai"><label class="nomePais">Uruguai</label> 
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+         <div class="secaoPaises">
+            <h2>Coreia do Sul</h2>
+            <p class="descPais">Em 1954, a Coreia do Sul fez sua primeira aparição em copas do mundo, mas acabou sendo eliminada na primeira fase de maneira vexatória, perdendo de 7x0 para a Turquia e por 9x0 para a Hungria, conseguindo o feito de ser a seleção com mais gols sofridos em um único mundial(16). O país levou 32 anos para voltar aos mundiais, em 1986, onde conseguiu seu primeiro gol na derrota por 3x1 para a eventual campeã daquele torneio, a Argentina, com gol de Park Chang-sun, além do primeiro ponto em um empate de 1x1 com a Bulgária. O país também participou das copas de 1990, 1994 e 1998, onde fora eliminado em todas sem nunca conseguir vencer um jogo.
+            <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=_c9HoEyrP1o">Classificação da seleção da Coreia do Sul</a>
+            </p>
+            <h2>Gana</h2>
+            <p class="descPais">É uma das maiores forças do futebol africano. Venceu quatro vezes a Copa das Nações Africanas em 1963, 1965, 1978 e 1982 e foi quatro vezes vice-campeão em 1968, 1970, 1992 e 2010. Venceu cinco vezes a Copa da África Ocidental em 1982, 1983, 1984, 1986 e 1987. E participou três vezes da Copa do Mundo (2006, 2010, 2014).
+            Na Copa do Mundo FIFA de 2006, foi a única seleção da África a passar para a segunda fase da competição, após eliminar a então favorita República Checa. A Seleção Ganesa de Futebol foi eliminada pelo Brasil nas oitavas de final, ao perder por 3 a 0, ficando na 13ª posição na classificação final.
+            Na Copa do Mundo FIFA de 2010 Gana obteve uma melhor colocação, saindo nas quartas de final. Novamente foi a única representante do continente africano a passar para a segunda fase da competição após uma vitória sobre a Sérvia, um empate com a Austrália e uma derrota para a Alemanha na fase de grupos. Nas oitavas de final, venceram os Estados Unidos e nas quartas, em uma das partidas mais emocionantes do mundial, foram eliminados pelo Uruguai na disputa de pênaltis.  
+            <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=yfqWAfUDI-M">Classificação da seleção da Gana</a>
+            </p>
+            <h2>Portugal</h2>
+            <p class="descPais">Portugal chegou pela primeira vez à fase final de um Campeonato da Europa em 1984, chegando também às meias finais e perdendo da mesma forma com o anfitrião do torneio e futuro campeão, a França. Durante várias décadas, a seleção portuguesa não fez parte de um grupo de equipas candidatas a vencer títulos. No entanto, a equipa portuguesa evoluiu, sendo presença constante em quase todas as fases finais de grandes torneios a partir do início do século XXI, fruto da presença na equipa de vários jogadores de classe mundial (incluindo dois vencedores da Bola de Ouro), que representam regularmente os principais clubes europeus. A aposta dos três grandes clubes portugueses - Sporting, Benfica e Porto - na formação de jogadores tem também beneficiado a seleção, cuja média de idades tem vindo a descer. O primeiro grande título da equipa portuguesa foi conquistado em 2016, quando os portugueses venceram a final do Campeonato da Europa frente à anfitriã França, após vitória no prolongamento. 3 anos depois, os portugueses venceram a primeira edição da Liga das Nações da UEFA, após disputarem a final da competição contra a Holanda no Estádio do Dragão. Até 2016, a sua melhor prestação em grandes torneios fora a presença na final do Euro 2004, competição da qual foi país anfitrião e que perdeu frente à Grécia.
+            <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=mFgyUKqg3HU">Classificação da seleção de Portugal</a>
+            </p>
+            <h2>Uruguai</h2>
+            <p class="descPais">Possui uma das mais gloriosas histórias do futebol mundial, tendo conquistado um total de 19 títulos oficiais, tendo vencido as primeiras competições oficiais de alcance mundial - os torneios olímpicos de futebol de 1924 e 1928 - que lhe deram o apelido de Celeste Olímpica - e a primeira Copa do Mundo, da qual foi o país-sede. Também venceu a edição de 1950, no Brasil, derrotando os donos da casa no episódio conhecido como Maracanazo. O Uruguai também é o recordista de títulos da Copa América, sendo a última em 2011 - foram 15 títulos, incluindo aí a primeira edição do torneio, realizada em 1916. É uma das grandes seleções do futebol mundial, sendo uma das oito campeãs mundiais e destas uma das seis que tem mais de um título, sendo bicampeã da Copa do Mundo e considerada tetracampeã mundial[2] - e por isso ostenta quatro estrelas em seu escudo - já que os 2 dois torneios olímpicos conquistados antes da Copa de 1930 eram acreditados como "campeonatos mundiais"[3] também pela FIFA.[2] Até a Copa do Mundo de 2018, o Uruguai já havia se classificado para 13 edições da Copa do Mundo (1930, 1950, 1954, 1962, 1966, 1970, 1974, 1986, 1990, 2002, 2010, 2014 e 2018), o que faz dela a terceira Seleção da América do Sul com mais participações em Copas do Mundo, atrás somente do Brasil e da Argentina.
+            <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=KpbPWpT2FzI">Classificação da seleção de Uruguai</a>
+            </p>
+        </div>
+    </div>        
+        <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+       <script type="text/javascript">
+                diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })
+                //Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script>    
+</body>
+</html>
+
+<!--SPNH-->

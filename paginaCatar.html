@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title>País Sede - Catar</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-family: arial;
+		}
+		.cabecalho{
+			width: 100%;
+			height: auto;
+			margin-top:15px ;
+			margin-bottom: 15px;
+			display: flex;
+			justify-content: space-between;
+
+		}
+		.titulo{
+			width: 40%;
+			max-width: 40%;
+			padding-top:20px;
+			padding-left: 5px;
+		}
+
+		/*MENU*/
+		.menu{
+			width: 40%;
+			height: 30px;
+			max-height: 30px;
+			max-width: 40%;
+			margin: auto;
+
+			display: flex;
+			justify-content: space-evenly;
+			border: 1px solid grey;
+			margin-left: 30%;
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+			background-color:WHITE ;
+			color:#8e1a3d;
+		}
+
+		.comp{
+			text-align: center;
+			width: 20%;
+			height: 100%;
+			max-width: 20%;
+			margin-bottom: 3px;
+			border-right: 1px solid grey;
+		}
+
+		#contato{
+			border: none;
+		}
+
+
+		.comp:hover{
+			background:#e6ebed;
+			-moz-box-shadow:0 3px 10px 0#ffffff;
+			-webkit-box-shadow:0 3px 10px 0 #dff1f7;
+			text-shadow:0px 0px 5px #9e1840;
+		}
+		.txtComp{
+			font-size: 90%;
+			cursor: pointer;
+			margin-top: 6px;
+
+
+		}
+		.txtComp:hover{
+			text-decoration: underline;
+
+		}
+		/*SWITCH*/
+		.direita{
+			display: flex;
+			justify-content: space-between;
+			width: 7%;
+			max-width: 7%;
+			margin-left: 15px;
+
+		}
+		input[type="checkbox"] {
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
+
+		label {
+			cursor: pointer;
+			text-indent: -9999px;
+			width: 50px;
+			height: 30px;
+			background: #8e1a3d;
+			display: block;
+			border-radius: 100px;
+			position: relative;
+		}
+
+		label:after {
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			border-radius: 90px;
+			transition: 0.2s;
+		}
+		input:checked + label {
+			background: #424242;
+		}
+
+		input:checked + label:after {
+			left: calc(100% - 5px);
+			transform: translateX(-100%);
+		}
+
+		label:active:after {
+			width: 40px;
+		}
+		/*CORPO*/
+		.container{
+			width: 70%;
+			margin:auto ;
+			margin-top:30px;
+			text-align: justify;
+			padding: 15px;
+			background-color: #DBDBDE;
+			box-shadow:6px 6px 6px #7f7f7f; 
+			border-radius: 20px;    
+
+		}
+		/*IMAGENS*/
+		.quadroInicio{
+			width: 80%;
+			margin: auto;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			height: 400px;
+			max-height: 400px;
+		}
+		#imagemInicio{
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32);
+
+		}
+		#imagemInicioEscondida{
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32);
+
+		}
+		.quadro{
+			width: 50%;
+			margin: auto;
+			margin-top: 15px;
+
+		}
+		.imagem, video{
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32) ;
+		}
+
+		.some{
+			display: none;
+		}
+		.secoes{
+			margin-bottom: 30px;
+		}
+		h2{
+			text-align: justify;
+			font-weight: 500;
+		}
+		h3{
+			font-weight: 300;
+			margin-top: 15px;
+		}
+		/*RODAPÉ*/
+		.rodape{
+			background-color: #8e1a3d;
+			color: white;
+			margin-top: 50px;
+			border-top: 1px solid #222122;
+
+		}
+		.colaboradoresTit{
+			padding-left:15px;
+			padding-top: 15px;
+			font-weight: bold;
+		}
+		.colaboradores{
+			display: flex;
+			justify-content: space-around;
+		}
+		.datas{
+			display: flex;
+			justify-content: space-evenly;
+
+		}
+		.data,.data2{
+			font-size: 15px;
+			margin-right: 5px;
+			margin-top: 23px;
+			margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+			display: flex;
+			justify-content: center;
+			padding-left: 0px;
+		}
+		.copyright{
+			text-align: center;
+			padding-bottom: 10px;
+		}
+		/*DARKMODE*/
+		.tema{
+			padding: 8px 18px;
+		}       
+
+		.dark{
+			color: whitesmoke;
+			background-color: #222122;
+		}
+		.dark body{
+
+
+		}
+		.dark .menu{
+			background-color: #c69448 ;
+			color:white;
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+		}
+		.dark .container{
+			color: white;
+			background-color: #21233a;
+			box-shadow:6px 6px 6px rgb(8, 11, 32) ;
+
+		}
+		.dark .comp:hover{
+			background:#e0ad62;
+			-moz-box-shadow:0 3px 10px 0#ffffff;
+			-webkit-box-shadow:0 3px 10px 0 #dff1f7;
+			text-shadow:0px 0px 5px  #846230;
+		}
+		.dark .rodape{
+			color: white;
+			background-color:#21233a ;
+			border-top: 1px solid white;
+		}
+		.dark .imagem, video{
+			width: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px #89887c ;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div  name="passo1" class="cabecalho">
+			<h1 class="titulo">Catar O País Sede</h1>
+			<div class="menu">
+				<div class="comp" id="sobre">
+					<section class="txtComp" id="txtSobre">Sobre</section>
+				</div>
+				<div class="comp" id="index">
+					<section class="txtComp" id="txtIndex">Index</section>
+				</div>
+				<div class="comp" id="paginaBrasil">
+					<section class="txtComp" id="txtBrasil">Brasil</section>
+				</div>
+				<div class="comp" id="rivalidades">
+					<section class="txtComp" id="txtRivalidades">Rivalidades</section>
+				</div>
+				<div class="comp" id="contato">
+					<section class="txtComp" id="txtContato">Contato</section>
+				</div> 
+			</div>      
+			<div class="direita">
+				<div class="tema">
+					<input onclick="mudaTema()" class="tema" type="checkbox" id="switch" /><label for="switch">Toggle</label>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</header>
+	<div class="container">
+		<div class="quadroInicio">
+			<img id="imagemInicio" src="https://guiadoqatar.com.br/wp-content/uploads/2020/10/doha-qatar-1.jpg" alt="Catar">
+			<img id="imagemInicioEscondida" class="some" src="https://borala.blog.br/wp-content/uploads/2019/09/Doha-Qatar-17-copy.jpg" alt="Catar">
+		</div>
+		<div class="secoes">
+			<h2>Uma visão Geral Sobre O País</h2>
+			<p>Catar, ou Qatar, é um país localizado na Ásia Ocidental, na Península Arábica (península é uma extensão de terra cercada por água em quase todos os lados), e estende-se até o norte do Golfo Pérsico. O país é considerado um emirado, tendo seu território administrado por um membro da classe dominante, no caso um emir. É uma das nações mais ricas do mundo.</p>
+			<br>
+
+			<h3>Sua Origem</h3>
+			<p>O Catar era considerado um protetorado britânico devido à divisão do Império Otomano. Tornou-se independente do Reino Unido em 1971, vindo a ser um Estado soberano. A dinastia reinante frente ao governo do Catar é a família Al Thani, há quase 150 anos. A monarquia é herdada de pais para filhos.</p>
+			<br>
+			
+			<h3>Panorama sobre Sua Econômia</h3>
+			<p>É atualmente um dos países mais ricos do mundo e com umas das menores cargas tributárias, segundo o Relatório Global de Competitividade. Mas esse histórico de riquezas deu-se a partir dos anos 40, quando se iniciou no país a exploração do petróleo e gás natural.</p>
+			<p>O país é rico em recursos naturais, sendo um dos maiores produtores de gás natural do mundo. No ano de 1974, o Qatar Petroleum assumiu a exploração e controle do petróleo existente no país, alavancando a </p>
+			<p>Segundo o Observatório da Complexidade Econômica (OEC), o Catar é a 47º maior economia de exportação do mundo, tendo exportado, em 2017, um total de US$ 52,3 bilhões. As principais exportações do país são o petróleo, petrolíferos refinados, polímeros de etileno e alumínio em formas brutas. Os principais destinos desses produtos são a Coreia do Sul, Japão, Índia, China e Cingapura.</p>
+			<h3>Um Passeio Por sua Capital</h3>
+			<p>Doha é a capital do Catar, sendo a cidade mais populosa do emirado, concentrando mais da metade da população, é extremamente urbanizada. Localiza-se na porção leste do país e conta com aproximadamente um pouco mais de 1.300.000 habitantes. É limitada pelo Golfo Pérsico e possui clima desértico, com temperaturas altíssimas (próximas de 45ºC) ao longo do verão.</p>
+			<p>Foi oficializada como a capital do país quando o Catar tornou-se independente do Reino Unido. A cidade é conhecida pelo seu acelerado desenvolvimento. Nela encontra-se o que ficou conhecido como a “Cidade da Educação”, iniciativa da Fundação do Catar para a Educação, Ciência e Desenvolvimento Humanitário, desenvolvido em 1997. Sediou diversos eventos como os Jogos Asiáticos de 2006, Jogos Pan-Arábicos 2011 e diversos jogos da Copa da Ásia e, possivelmente, sediará alguns jogos da Copa do Mundo de 2022.</p>
+			<div class="quadro">
+				<img src="https://s4.static.brasilescola.uol.com.br/img/2019/05/doha-capital-catar.jpg" alt="Doha" class="imagem">
+			</div>
+			<h3>Seu Clima E População</h3>
+			<p>Por estar localizado em uma região de planície árida basicamente coberta por areia e pouquíssima vegetação nativa, o Catar é uma região de clima desértico com altíssimas temperaturas que variam ao longo do ano entre 14ºC e 45ºC. Possui um verão longo que perdura entre os meses de maio e setembro com temperatura média de 38ºC. As maiores temperaturas, geralmente, são marcadas no mês de julho.</p>
+			<p>As temperaturas tornam-se amenas entre os meses de dezembro e março, com temperatura média abaixo de 26ºC. Os índices pluviométricos são baixos no período da estação quente e aumentam ao chegar a estação fresca.</p>
+			<br>
+			<p>A população do Qatar ultrapassou os dois milhões de habitantes. Contudo, cerca de 75% da população é composta por estrangeiros oriundos especialmente de outras nações árabes. É em sua maioria urbana, com aproximadamente 90% da população morando nas cidades. O país possui elevados indicadores sociais como o Índice de Desenvolvimento Humano (IDH). O IDH é 0,856, considerado alto e indicando boas condições de saúde, educação e renda.</p>
+			<div class="quadro">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/DeZDwIkNSp8?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
+		</div>
+		<div class="secoes">
+			<h2>Catar Na Copa Do Mundo</h2>
+			<p>O Catar ganhou o direito de sediar a Copa do Mundo que será realizada em 2022 em meio a um cenário conturbado de denúncias e acusações de corrupção. O país foi acusado de pagar à FIFA para sediar o torneio. O Mundial realizado no país contará com a construção de oito estádios, estando seis deles localizados na capital Doha.</p>
+			<p>Será realizada entre os dias 21 de novembro e 18 de dezembro de 2022. Este é o primeiro Mundial no país do Oriente Médio, a segunda na Ásia. A edição de estreia no continente asiático aconteceu em 2002, sendo sediada pela Coreia do Sul e pelo Japão, e tendo o Brasil como campeão do mundo. </p>
+			<div class="quadro">
+				<img src="https://i.ytimg.com/vi/GYYdydu_UMc/maxresdefault.jpg" alt="Doha" class="imagem">
+			</div>
+		</div>
+		<div class="secoes">
+			<h2>Polêmicas Na Copa</h2>
+			<h3>Acusações de Compra de VOtos</h3>
+			<p>Desde a escolha como país sede da Copa do Mundo 2022, o Catar foi acusado de ter comprado votos para ganhar a eleição. Na ocasião, eles bateram, por 14 a 8, a disputa contra os Estados Unidos na rodada final. Segundo o Departamento de Justiça dos EUA, houve pagamento a oficiais da Fifa em troca de votos. O ex-presidente da CBF, Ricardo Teixeira, teria sido um deles. O jornal britânico The Sunday Times publicou que o Catar pagou US$ 880 milhões (R$ 3,4 bilhões, na época) para ser o país sede da Copa do Mundo.</p>
+			<h3>Exploração de Trabalhadores Na Contrução Dos Estádios</h3>
+			<p>Para a Copa do Mundo 2022, o governo do Catar construiu uma cidade do zero, a Lusail. Além disso, toda uma infraestrutura de estádio e arredores precisou de um esforço dobrado de trabalhadores por dias e noites. Porém, há denúncias de cobranças ilegais de empresas na contratação de funcionários para as obras. Segundo as denúncias, as pessoas pagavam as taxas com a promessa de serem ressarcidos e nunca mais viram o dinheiro. Além disso, denúncias de condições análogas à escravidão, com trabalhos pesados em temperaturas acima de 50 graus também fizeram parte do pré-Copa.</p>
+			<h3>Pessoas LGBTQIA+ E Demontrações Públicas de Afeto</h3>
+			<p>Um terceiro ponto que está sendo bastante comentado desde a escolha do Catar para sediar a Copa do Mundo 2022 é a segurança para as pessoas LGBTQIA+. No país, ser qualquer outra orientação ou identidade de gênero do que cis hétero é crime, podendo levar a pessoa à prisão por até sete anos. Além disso, as demonstrações de afeto em público são proibidas no Qatar. Nós pedimos aos visitantes que apreciem e respeitem a nossa cultura. Ao mesmo tempo, que aproveitem a hospitalidade que oferecemos", defende o secretário-geral do comitê, Hassan Al Thawadi. Segundo já se foi falado em entrevistas oficiais, levantar bandeiras do movimento LGBTQIA+ ou fazer qualquer tipo de protesto durante a Copa do Mundo está proibido.</p>
+		</div>
+
+	</div>
+
+	<footer>
+		<div class="rodape">
+			<p class="colaboradoresTit">Colaboradores:</p>
+			<div class="colaboradores">
+				<p>Espinha</p>
+				<p>Jota</p>
+				<p>Brandão</p>
+			</div>
+			<div class="datas"> 
+				<div class="data2">
+					Iniciado na data de: 27/08/2022
+				</div>
+				<div class="data"></div>
+			</div>
+			<p class="copyright">©MetadeDosTheBoys</p>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		cont=1;
+		iaMesAno=dataHoje();
+		function dataHoje(){
+			data=new Date();
+			dia=data.getDate();
+			mes=data.getMonth()+1;
+			ano=data.getFullYear(); 
+			return [dia,mes,ano]
+		}
+		$(document).ready(function(){
+			$(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+			valorSwitch=document.querySelector("#switch").value
+			return [valorSwitch];
+		})
+		 //menu
+		 $("#txtIndex").click(function(){
+		 	$(location).prop('href','index.html');
+		 })
+		 $("#txtSobre").click(function(){
+		 	$(location).prop('href','SOBRE.html');
+		 })
+		 $("#txtContato").click(function(){
+		 	$(location).prop('href','form.html');
+		 })
+		 $("#txtBrasil").click(function(){
+		 	$(location).prop('href','paginaBrasil.html');
+		 })
+		 $("#txtRivalidades").click(function(){
+		 	$(location).prop('href','rivalidades.html');
+		 })
+        //contador criado para trocar o tema
+        //quando clicado no botão. é adicionado mais um, como cont começa no 1, quando é ativo pelo primira vez se torna par, logo se sua divisao por dois der inteiro significa que esta ativo, quando desativado o botão, é somado mais um, fazendo cont se tornar impar, restando um na divisão por 2, demosntrando que esta desativado
+        $("#switch").change(function(){
+        	cont++
+        	if(cont%2==0){
+        		$("#imagemInicio").addClass("some");
+        		$("#imagemInicioEscondida").removeClass("some");
+        	}else{
+        		$("#imagemInicio").removeClass("some");
+        		$("#imagemInicioEscondida").addClass("some");
+        	}		
+        });
+        function mudaTema(){
+        	document.body.classList.toggle("dark")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo F</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+    
+        h1{
+            margin-top: 80px;
+            margin-bottom: 40px;
+            text-align:center;
+
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+         /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+                .linkVideo{
+                    color: black;   
+                    font-weight: bold;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+            <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+    </div>
+        
+    <div class="container">
+        <h1 class="titulo">Grupo F</h1>    
+        <div class="tabela">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>CLASSIFICAÇÃO</th>
+                    <th>Pontos</th>
+                    <th>Jogos</th>
+                    <th>Vitorias</th>
+                    <th>Empate</th>
+                    <th>Derrota</th>
+                    <th>Gols feitos</th>
+                    <th>Gol sofridos </th>
+                    <th>Saldo de gol</th>
+                    <th>Porcentagem</th>
+                    <th>Ultimos Jogos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                    <td><img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/15/B%C3%A9lgica.svg" alt="imagem Bélgica"><label class="nomePais">Bélgica</label>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td> <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/07/15/Canad%C3%A1.svg" alt="imagem Canadá"><label class="nomePais">Canadá</label> 
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/16/Cro%C3%A1cia.svg" alt="imagem Croácia"><label class="nomePais">Croácia</label></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="iconePais"src="https://storage.googleapis.com/bkt-gglobo-sde-hdg-prd-sdeadmin_prod/media/organizations/2019/09/10/Marrocos.svg" alt="imagem Marrocos"><label class="nomePais">Marrocos</label> 
+                </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+         <div class="secaoPaises">
+            <h2>Bélgica</h2>
+            <p class="descPais">
+                A primeira partida da seleção belga foi disputada a 1 de Maio de 1904, em empate por 3 a 3 contra a França. De início, a equipe contou com ajuda de alguns jogadores ingleses, fazendo com que estas partidas não fossem consideradas. Em 28 de Abril de 1901, o time havia batido Países Baixos por 8 a 0. A equipe recebeu o apelido de Os Diabos Vermelhos do jornalista Pierre Walckiers em 1906, após vitória por 3 a 2 contra Países Baixos em Roterdã. A Bélgica esteve presente em onze mundiais, sendo que sua melhor classificação se deu em 2018 na Russia, onde terminou na terceira colocação. Na Eurocopa, o melhor desempenho foi o vice-campeonato em 1980.
+                <a target="alt" class="linkVideo" href="https://youtu.be/-b78fwQRPe4">Classificação da seleção da Bélgica</a>
+            </p>
+            <h2>Canadá</h2>
+            <p class="descPais">
+                Suas realizações mais significativas são: venceu o Campeonato da CONCACAF de 1985 para se qualificar para a Copa do Mundo FIFA de 1986 e ganhar a Copa Ouro da CONCACAF 2000, se classificando para a Copa das Confederações de 2001. O Canadá também ganhou uma medalha de ouro nos Jogos Olímpicos de Verão 1904. O Canadá conquistou duas medalhas de ouro nos Jogos da Francofonia de 1989 e 1997 sendo até o momento o maior vencedor dessa competição. O único ponto do Canadá em competições FIFA foi em um empate de 0x0 com a seleção brasileira em 2001.
+                <a target="alt" class="linkVideo" href="https://youtu.be/_mJ3aztwbig">Classificação da seleção do Canadá</a>
+            </p>
+            <h2>Croácia</h2>
+            <p class="descPais">
+                A consagração do futebol croata veio mesmo com o terceiro lugar na Copa do Mundo de 1998. A equipe que tinha Davor Suker, o artilheiro do mundial e Zvonimir Boban, na época jogador do AC Milan, como suas principais estrelas, conquistou essa façanha com uma campanha surpreendente, em que derrotaram a Alemanha nas quartas-de-final por 3 a 0. A Seleção Croata só foi derrotada na semi-final, perdendo para a anfitriã França por 2 a 1, com dois gols de Lilian Thuram que nunca havia marcado um gol pela seleção. Na Copa de 2002 e na Eurocopa de 2004, a equipe croata não conseguiu passar da primeira fase. O mesmo se deu na Copa de 2006, na Alemanha, quando terminou em 22º lugar. Para a Euro 2008, a Croácia não teve uma seleção tão forte quanto aquela que chegou às semifinais na Copa de 1998, tendo alcançado o terceiro lugar. Contudo, mesmo assim conseguiu uma ótima campanha nas Eliminatórias Européias, vencendo oito dos dez jogos que disputou, o que alegrou muito o técnico Zlatko Kranjcar. Nas dez partidas realizadas pela seleção croata, o único momento em que houve descontentamento dos torcedores foi quando a Croácia empatou com a seleção de Malta em 1 a 1, provocando revolta em uma boa parte dos torcedores ao saírem do estádio.
+                 <a target="alt" class="linkVideo" href="https://youtu.be/y-s3MkvOBeI">Classificação da seleção da Croácia</a>
+            </p>   
+            <h2>Marrocos</h2>
+            <p class="descPais">
+                Participou das Copas do Mundo de 1970, 1986, 1994, 1998 e participou da de 2018 na Rússia, tendo a melhor posição obtida como 11º lugar em 1986. Nos Jogos da Francofonia conquistou a medalha de ouro em 2001 e obteve uma medalha de prata em 1989 e uma de bronze em 2005. Seu maior título foi a Copa das Nações Africanas de 1976.
+                 <a target="alt" class="linkVideo" href="https://youtu.be/C6ZRUQOTckc">Classificação da seleção do Marrocos</a>
+            </p>
+        </div>
+    </div>      
+        <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+       <script type="text/javascript">
+                
+                diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })
+                //Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script>    
+</body>
+</html>
+
+<!--SPNH-->

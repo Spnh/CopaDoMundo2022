@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo C</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+    
+        h1{
+            margin-top: 80px;
+            margin-bottom: 40px;
+            text-align:center;
+
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+         /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+            <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+    </div>
+        
+    <div class="container">
+        <h1 class="titulo">Grupo C</h1>    
+        <div class="tabela">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>CLASSIFICAÇÃO</th>
+                    <th>Pontos</th>
+                    <th>Jogos</th>
+                    <th>Vitorias</th>
+                    <th>Empate</th>
+                    <th>Derrota</th>
+                    <th>Gols feitos</th>
+                    <th>Gol sofridos </th>
+                    <th>Saldo de gol</th>
+                    <th>Porcentagem</th>
+                    <th>Ultimos Jogos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="active-row">
+                    <td>
+                        <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/07/15/Argentina.svg" alt="imagem Argentina"><label class="nomePais">Argentina</label>
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/05/Ar%C3%A1bia_Saudita.svg" alt="Arabia Saudita"><label class="nomePais">Arabia Saudita</label> 
+
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/07/15/M%C3%A9xico.svg" alt="imagem Mexico"><label class="nomePais">Mexico</label></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/02/Polonia_Rl0m1A5.svg" alt="imagem Polonia"><label class="nomePais">Polonia</label> 
+                    </td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0%</td>
+                    <td></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+         <div class="secaoPaises">
+            <h2>Mexico</h2>
+            <p class="descPais">
+                A seleção mexicana participará de sua 17ª edição da Copa do Mundo de Futebol em 2022. Os melhores desempenhos da seleção mexicana foram em 1970 e 1986 quando o México chegou às quartas-de-final. Nas duas ocasiões a seleção mexicana era anfitriã da Copa do Mundo de Futebol. Desde 1994 o México é eliminado nas oitavas de final. Em 2018 a seleção mexicana foi eliminada nesta fase pela sétima vez seguida.
+            </p>
+            <h2>Arabia Saudita</h2>
+            <p class="descPais">Eles aparecem como novatos no cenário mundial, tendo feito sua primeira Copa do Mundo em 1994 e derrotando a Bélgica na primeira fase antes de ser eliminado pela Suécia na fase seguinte. O time foi eliminado na primeira fase das duas Copas seguintes, incluindo um sonoro 8 a 0 da Alemanha em 2002.Arabia Saudita Participara da <i>Copa do Mundo Qatar 2022</i>.
+            </p>
+            <h2>Argentina</h2>
+            <p class="descPais">A seleção argentina participará de sua 18ª edição da Copa do Mundo de Futebol em 2022. A Seleção da Argentina só não participou dos mundiais de 1938, 1950 e 1954 e não se classificou para a Copa do Mundo de 1970. A seleção argentina venceu as Copas do Mundo de 1978 e 1986 e foi vice-campeã em 1930, 1990 e 2014. A Argentina venceu a Copa das Confederações de 1992 (chamada na época de Copa Rei Fahd). A Argentina, juntamente com o Uruguai, é a maior vencedora da Copa América com 15 títulos. A Seleção Argentina também foi duas vezes campeã da Copa dos Campeões CONMEBOL-UEFA (Finalíssima). A seleção argentina conquistou a medalha de ouro no futebol masculino dos Jogos Olímpicos de 2004 e 2008 e a medalha de prata em 1928 e em 1996.</p>
+            <h2>Senegal</h2>
+            <p class="descPais">A primeira participação da Seleção do Senegal em Copas do Mundo ocorreu em 2002, tendo defrontado e vencido a então seleção campeã do mundo, a França no jogo inaugural da competição. Acabou em sétimo lugar após ser eliminada nas quartas-de-final pela Turquia.
+                Apesar de favorita a Seleção do Senegal não conseguiu o apuramento para o Mundial de 2006, tendo ficado atrás da Seleção do Togo. Nas Eliminatórias da Copa do Mundo de 2018, se classificou em 1º lugar no seu grupo, garantindo assim vaga para o segundo Mundial de sua história.</p>
+        </div>
+    </div>        
+        <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+       <script type="text/javascript">
+                
+                diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })//Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script>    
+</body>
+</html>
+
+<!--SPNH-->

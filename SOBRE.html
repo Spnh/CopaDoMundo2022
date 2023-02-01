@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sobre.html</title>
+	<style type="text/css">
+		body{
+			font-family: arial;
+			
+		}
+		.cabecalho{
+			width: 100%;
+			height: auto;
+			display: flex;
+			justify-content: space-between;
+		}
+		.data{
+			font-size: 20px;
+			width: 150px;
+			height: 25px;
+			margin-right: 10px;
+			margin-top: 23px;
+			/*border:1px solid black ;
+			*/display: flex;
+			justify-content: center;
+		}
+		.container{
+			width:50%;
+			height:500px;
+			margin: auto;
+			border-radius:60px;
+			background: #8e1a3d;
+			color: whitesmoke;
+ 			box-shadow: 6px 6px 6px rgba(0,0,0,0.5);
+
+		}
+		.Componentes,.matreria,.professor,.turma,.index{
+			width: auto;
+			margin: auto;
+			padding-top:30px ;
+			padding-left: 30px;
+			display: flex;
+			justify-content: space-between;
+			/*margin-top: 60px;*/
+		}
+		.index{
+			margin-top:-30px;
+		}
+		.titComp,.titMatr,.titProf,.titTur,.titInd{
+			font-weight: 500;
+		}
+		.titComp:hover,.titMatr:hover,.titProf:hover,.titTur:hover,.titInd:hover{
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		.comp, .matr,.prof,.tur,.ind{
+			margin-right:20px;
+			text-align: justify;
+
+		}
+		.secaoComp{
+			margin-top: -30px;
+		}
+		.ind{
+			text-decoration: underline;
+			color: white;
+			font-weight: bolder;
+			cursor: pointer;
+		}
+
+                /*DARKMODE*/
+                .tema{
+                    padding: 8px 18px;
+                }       
+
+                .dark{
+                    color: whitesmoke;
+                    background-color: #222122;
+                }
+                .dark .container{
+                    color: #f0bc6b;
+                    background-color: #21233a;
+                    box-shadow:6px 6px 6px rgb(8, 11, 32) ;
+
+                }
+                .dark .ind{
+                    color: #f0bc6b;
+
+                }
+                
+                
+               input[type="checkbox"] {
+                  height: 0;
+                  width: 0;
+                  visibility: hidden;
+                }
+
+                label {
+                  cursor: pointer;
+                  text-indent: -9999px;
+                  width: 50px;
+                  height: 30px;
+                  background: #8e1a3d;
+                  display: block;
+                  border-radius: 100px;
+                  position: relative;
+                }
+
+                label:after {
+                  content: "";
+                  position: absolute;
+                  top: 5px;
+                  left: 5px;
+                  width: 20px;
+                  height: 20px;
+                  background: #fff;
+                  border-radius: 90px;
+                  transition: 0.2s;
+                }
+                input:checked + label {
+                  background: #424242;
+                }
+
+                input:checked + label:after {
+                  left: calc(100% - 5px);
+                  transform: translateX(-100%);
+                }
+
+                label:active:after {
+                  width: 40px;
+                }
+                
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>  
+
+</head>
+<body>
+	<header>
+		<div class="cabecalho">
+			<h1 class="titulo">Projeto Final de FW2</h1>
+			<div class="tema">
+                    <input onclick="mudaTema()" class="tema" type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                </div>
+            </div>
+		</div>
+			<hr>
+	</header>
+	<div class="container">
+				<!--Turma-->
+		<div class="turma">
+			<p class="titTur">Turma</p>
+			<section class="secaoTur">
+				<p class="tur">2111</p>
+			</section>
+		</div>
+		<hr>
+				<!--Professor-->
+		<div class="professor">
+			<p class="titProf">Professor</p>
+			<section class="secaoProf">
+				<p class="prof">Biancovilli</p>
+			</section>
+
+		</div>	
+		<hr>
+				<!--Materia-->
+		<div class="matreria">
+			<p class="titMatr">Matéria</p>
+			<section class="secaoMatr">
+				<p class="matr">Ferramentas Da web II</p>
+			</section>
+		</div>
+		<hr>
+				<!--Componentes-->
+		<div class="Componentes">
+			<p class="titComp">Componentes Do Grupo</p>
+			<section class="secaoComp">
+				<p class="comp">Gabriel Araujo Espinha | nº8</p>
+				<p class="comp">Israel Vitor Brandão | nº14</p>
+				<p class="comp">João Victor Santiago Pereira | nº15</p>
+			</section>
+		</div>
+		<hr>
+				<!--Index-->
+		<div class="index">
+			<p class="titInd">Index</p>
+			<section class="secaoInd">
+				<p class="ind">Index</p>
+			</section>
+		</div>
+		 
+	</div>
+	<!-- <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer> -->
+	<script type="text/javascript">
+		diaMesAno=dataHoje();
+		function dataHoje(){
+			data=new Date();
+			dia=data.getDate();
+			mes=data.getMonth()+1;
+			ano=data.getFullYear();	
+			return [dia,mes,ano]
+		}
+		$(".titTur").click(function(){
+			$(".tur").slideToggle();
+		})
+		$(".titProf").click(function(){
+			$(".prof").slideToggle();
+		})
+		$(".titMatr").click(function(){
+			$(".matr").slideToggle();
+		})
+		$(".titComp").click(function(){
+			$(".comp").slideToggle(700);
+		})
+		$(".titInd").click(function(){
+			$(".ind").slideToggle();
+		})
+		$(".ind").click(function(){
+			$(location).prop('href','index.html')
+		})
+		
+
+
+		$(document).ready(function(){
+			$(".tur").hide();
+			$(".prof").hide();
+			$(".matr").hide();
+			$(".comp").hide();
+			$(".ind").hide();
+			$(".data").text(dia+"/"+mes+"/"+ano);
+		})
+		function mudaTema(){
+    document.body.classList.toggle("dark")
+}
+	</script>
+</body>
+</html>

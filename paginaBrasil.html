@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>participação do Brasil na Copa do Mundo</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body{
+			font-family: arial;
+		}
+		.cabecalho{
+			width: 100%;
+			height: auto;
+			margin-top:15px ;
+			margin-bottom: 15px;
+			display: flex;
+			justify-content: space-between;
+
+		}
+		.titulo{
+			width: 40%;
+			max-width: 40%;
+			padding-top:20px;
+			padding-left: 5px;
+		}
+		/*MENU*/
+		.menu{
+			width: 30%;
+			height: 30px;
+			max-height: 30px;
+			max-width: 40%;
+			margin: auto;
+			display: flex;
+			justify-content: space-evenly;
+			border: 1px solid grey;
+			margin-left: 25%;
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+			background-color:WHITE ;
+			color:#016d26;
+		}
+
+		.comp{
+			text-align: center;
+			width: 20%;
+			height: 100%;
+			max-width: 20%;
+			margin-bottom: 3px;
+			border-right: 1px solid grey;
+		}
+
+		#contato{
+			border: none;
+		}
+
+
+		.comp:hover{
+			background:#e6ebed;
+			-moz-box-shadow:0 3px 10px 0#ffffff;
+			-webkit-box-shadow:0 3px 10px 0 #dff1f7;
+			text-shadow:0px 0px 5px green;
+		}
+		.txtComp{
+			font-size: 90%;
+			cursor: pointer;
+			margin-top: 6px;
+
+
+		}
+		.txtComp:hover{
+			text-decoration: underline;
+
+		}
+		/*SWITCH*/
+		.direita{
+			display: flex;
+			justify-content: space-between;
+			width: 7%;
+			max-width: 7%;
+			margin-left: 15px;
+
+		}
+		input[type="checkbox"] {
+			height: 0;
+			width: 0;
+			visibility: hidden;
+		}
+
+		label {
+			cursor: pointer;
+			text-indent: -9999px;
+			width: 50px;
+			height: 30px;
+			background: #016d26;
+			display: block;
+			border-radius: 100px;
+			position: relative;
+		}
+
+		label:after {
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			border-radius: 90px;
+			transition: 0.2s;
+		}
+		input:checked + label {
+			background:#2a2e8b;
+		}
+
+		input:checked + label:after {
+			left: calc(100% - 5px);
+			transform: translateX(-100%);
+		}
+
+		label:active:after {
+			width: 40px;
+		}
+		/*CORPO*/
+		.container{
+			width: 70%;
+			margin:auto ;
+			margin-top:30px;
+			text-align: justify;
+			padding: 15px;
+			background-color: #DBDBDE;
+			box-shadow:6px 6px 6px #7f7f7f; 
+			border-radius: 20px;    
+
+		}
+		.secoes{
+			margin-bottom: 30px;
+		}
+		h2{
+			text-align: justify;
+			font-weight: 500;
+		}
+		h3{
+			font-weight: 300;
+			margin-top: 15px;
+		}
+		/*IAMGENS*/
+		.quadro{
+			width: 50%;
+			margin: auto;
+			margin-top: 15px;
+		}
+
+		video{
+			width: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32) ;
+		}
+
+		.imagem{
+			width: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px rgb(8, 11, 32) ;
+		}
+		/*CARROSSEL*/
+		#slide {
+			width: 70%;
+			height: 400px;
+			overflow: hidden;
+			height: 400px;
+			margin: 15px auto;
+			margin-bottom: 20px;
+			box-shadow:6px 6px 6px rgb(8, 11, 32) ;
+			border: 1px solid black;
+
+			position: relative;
+		}
+		#slide img {
+			position: absolute;
+			z-index: 1;
+			display: none;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+		}
+		#slide p {
+			z-index:2;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 10px;
+			font-family: Arial;
+			font-size: 14px;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+		}
+		/*RODAPÉ*/
+		.rodape{
+			background-color: #016d26;
+			color: white;
+			margin-top: 50px;
+			border-top: 1px solid #222122;
+
+		}
+		.colaboradoresTit{
+			padding-left:15px;
+			padding-top: 15px;
+			font-weight: bold;
+		}
+		.colaboradores{
+			display: flex;
+			justify-content: space-around;
+		}
+		.datas{
+			display: flex;
+			justify-content: space-evenly;
+
+		}
+		.data,.data2{
+			font-size: 15px;
+			margin-right: 5px;
+			margin-top: 23px;
+			margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+			display: flex;
+			justify-content: center;
+			padding-left: 0px;
+		}
+		.copyright{
+			text-align: center;
+			padding-bottom: 10px;
+		}
+		/*DARKMODE*/
+		.tema{
+			padding: 8px 18px;
+		}       
+
+		.dark{
+			color: whitesmoke;
+			background-color: #1a7c3c;
+		}
+		.dark body{
+
+		}
+		.dark .titulo{
+		color: white;
+
+		}
+		.dark .menu{
+			background-color: #1a7c3c ;
+			color:white;
+			box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+		}
+		.dark .container{
+			color: #2a2e8b;
+			background-color: #D6E680 ;
+			box-shadow:6px 6px 6px rgb(8, 11, 32) ;
+
+		}
+		.dark .comp:hover{
+			background:#9094f1;
+			-moz-box-shadow:0 3px 10px 0#ffffff;
+			-webkit-box-shadow:0 3px 10px 0 #dff1f7;
+			text-shadow:0px 0px 5px  #846230;
+		}
+		.dark .rodape{
+			color: white;
+			background-color:#2a2e8b ;
+			border-top: 1px solid white;
+		}
+		.dark .imagem, video{
+			width: 100%;
+			border: 1px solid black;
+			box-shadow:2px 2px 2px #89887c ;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<header>
+		<div class="cabecalho">
+			<h1 class="titulo">Brasil Na Copa Do Mundo</h1>
+			<div class="menu">
+				<div class="comp" id="sobre">
+					<section class="txtComp" id="txtSobre">Sobre</section>
+				</div>
+				<div class="comp" id="index">
+					<section class="txtComp" id="txtIndex">Index</section>
+				</div>
+				<div class="comp" id="paginaCatar">
+					<section class="txtComp" id="txtCatar">Catar</section>
+				</div>
+				<div class="comp" id="rivalidades">
+					<section class="txtComp" id="txtRivalidades">Rivalidades</section>
+				</div>
+				<div class="comp" id="contato">
+					<section class="txtComp" id="txtContato">Contato</section>
+				</div> 
+			</div>      
+			<div class="direita">
+				<div class="tema">
+					<input onclick="mudaTema()" class="tema" type="checkbox" id="switch" /><label for="switch">Toggle</label>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</header>
+
+	<!-- <div class="imagem">
+		<img  class="imgPenta"src="https://www.futebolnaveia.com.br/wp-content/uploads/2021/06/cafu-2002-1.jpeg.webp" alt="Comemoração do Penta">
+	</div> -->
+	<div class="container">
+	<div id="slide">
+		<img src="https://conteudo.cbf.com.br/cdn/thumbs/910x455/201407/20140721105754_0.jpeg" alt="Primeiro Cameponato Mundial (Suécia-1958)">
+		<img src="https://conteudo.cbf.com.br/cdn/thumbs/910x455/201407/20140721105754_1.jpeg" alt="Bicampeonato Mundial (Chile-1962)">
+		<img src="https://conteudo.cbf.com.br/cdn/thumbs/910x455/201407/20140721105754_2.jpeg
+		" alt="Tricampeonato Mundial (México-1970)">
+		<img src="https://conteudo.cbf.com.br/cdn/thumbs/910x455/201407/20140721105754_3.jpeg" alt="Tetracampeonato Mundial (Estados Unidos-1994)">
+		<img src="https://conteudo.cbf.com.br/cdn/thumbs/910x455/201407/20140721105754_4.jpeg" alt="Pentacampeonato Mundial (Japão e Coreia do Sul-2002)">
+	</div>
+		<div class="secoes">			
+			<h2>A Maior Seleção Do Mundo</h2>
+			<p>Não há dúvidas de que o Brasil ainda é o país do futebol. Menos por ser o único pentacampeão mundial. Menos por ser o único a ter disputado todas as edições de Copa do Mundo. Menor por ser o país do Rei do Futebol, o único jogador tricampeão mundial. E mais porque o futebol é parte íntrinseca de nossa cultura. Alemanha, Itália, França, Argentina e mesmo a inventora do futebol Inglaterra podem acumular quantos títulos quiserem, mas nenhum deles – assumindo o risco de fazer a comparação não recomendada – superam ou sequer equivalem à relação carne e unha que o Brasil tem com o futebol.</p>
+		</div>
+
+		<div class="secoes">
+			<h2>Conquistas</h2>
+			<p>A Seleção Brasileira é a única seleção que participou de todas as edições da Copa do Mundo de Futebol. São cinco títulos mundiais (1958, 1962, 1970, 1994 e 2002), dois vice-campeonatos (1950 e 1998), dois terceiros lugares (1938 e 1978) e dois quartos lugares (1974 e 2014) em 20 participações. A Copa do Mundo de 2018 foi a 21ª participação do Brasil em Mundiais de Futebol.</p>
+			<br>
+			<p>O Brasil foi campeão pela primeira vez em 1958 na Suécia com Didi eleito o melhor jogador da competição e a presença de Garrincha e a estreia de Pelé em Copas. O Brasil conquistou o bicampeonato no Chile em 1962 com brilhantes atuações de Garrincha. O tricampeonato foi vencido no México com a famosa "Seleção de 70", de Rivelino, Tostão, Jairzinho e Pelé.</p>
+			<br>
+			<p>Depois de um intervalo de 24 anos o Brasil voltou a ser campeão em 1994. A seleção da "Era Dunga" trazia o caneco de volta ao Brasil com destaque para Romário, Bebeto e Taffarel. Em 2002, o Brasil foi pentacampeão na Copa da Coreia do Sul e Japão com destaque para Rivaldo, Ronaldinho Gaúcho e Ronaldo Fenômeno.</p>
+		</div>
+		<div class="quadro">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/fjVgNtlx5ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
+		<div class="secoes">
+			<h2>Decepções</h2>
+			<p>As maiores decepções em copas são as Copas de 1950 e 1982. Na primeira Copa do Mundo sediada no Brasil a equipe cantava vitória antes da tragédia do Maracanã, a qual o uruguaio Gigghia calou todo o estádio. Em 1982 a seleção reunia muitos craques (Falcão, Zico, Sócrates, Júnior, etc.), mas encontrou um inspirado Paolo Rossi nom Estádio de Sarriá na Espanha. O Brasil também vice-campeão em 1998 com uma atuação contestada não apenas na final, mas em toda a competição.</p>
+		</div>
+
+		<div class="secoes">
+			<h2>Momentos Marcantes</h2>
+			<h3>A redenção de ronaldo (Japão e Coreia do Sul-2002)</h3>
+			<p>Por dois anos, torcedores de todo o mundo se perguntaram se Ronaldo voltaria jogar o futebol que lhe rendeu o apelido de Fenômeno - na verdade, muitos se questionaram até mesmo se o atacante brasileiro conseguiria jogar futebol novamente, após a terrível ruptura do tendão patelar, em abril de 2000. A resposta veio em forma de oito gols na campanha do pentacampeonato do Brasil, na Copa da Coreia do Sul e do Japão, que lhe deram a artilharia do Mundial. O ato final foram os dois gols na vitória por 2 a 0 sobre a Alemanha, na decisão em Yokohama, e o choro que emocionou o mundo no banco de reservas, após ser substituído a poucos minutos do apito final.</p>
+			<div class="quadro">
+				<img src="https://brasil123.com.br/wp-content/uploads/2020/06/ronaldo-nazario-twitter.jpeg" alt="Fenomeno com Pelé" class="imagem">
+			</div>
+			<h3>A consagração de Pelé (México-1970)
+			</h3>
+			<p>O Rei do Futebol é, ainda hoje, o único tricampeão mundial como jogador. Campeão como revelação na Copa de 1958, aos 17 anos, bicampeão em 1962 com apenas duas partidas disputadas, até sofrer uma lesão, Pelé encontrou o auge no México, em 1970. Aos 29 anos, liderou a maior seleção de todos os tempos na conquista do tricampeonato do Brasil e seu em particular. Foi o camisa 10 perfeito em uma linha ofensiva de gênios: Rivelino, Tostão, Jairzinho e Gerson. Pelé fez de tudo: gols, assistências, dribles... até os gols que perdeu ficaram na memória.</p>
+			<div class="quadro">
+				<img src="https://placar.abril.com.br/wp-content/uploads/2021/09/PL_25_04_463-1.jpg-1.jpg" alt="consagração de Pelé" class="imagem">
+			</div>
+			<h3>O Maracanazo (Brasil-1950)</h3>
+			<p>Com a Europa destruída pela Segunda Guerra Mundial, o Brasil acolheu o futebol na volta das Copas do Mundo após 12 anos, em 1950. Construiu o Maracanã, um colosso capaz de abrigar a gigantesca paixão nacional pela seleção, que buscaria em casa seu primeiro título, já com status de potência após o terceiro lugar na Copa anterior, no então longínquo 1938, na França. Liderança do grupo na primeira fase e duas goleadas empolgantes no quadrangular final: 7 a 1 (sim, para o Brasil!) sobre a Suécia e 6 a 1 na Espanha. O empate no último jogo, contra o Uruguai, daria o título à seleção brasileira, que saiu na frente com Friaça, já no segundo tempo. Mas Schiaffino, aos 21, e o tristemente inesquecível chute cruzado de Ghiggia, aos 34, calaram o Maracanã. Bicampeão mundial, o Uruguai deu àquela conquista um apelido que ficou na história: o Maracanazo.</p>
+			<div class="quadro">
+				<img src="https://static-img.zz.pt/history/imgS620I11790T20190724180128.jpg" alt="O Maracanazo" class="imagem">
+			</div>
+			<h3>“Regina, eu te amo” (Japão e Coreia do Sul-2002)</h3>
+			<p>Quando recebeu a taça, Cafu subiu em cima do pódio, e sob as lentes de centenas de fotógrafos e os olhares de milhões de pessoas, bradou, com toda força dos seus pulmões: “Regina, eu te amo!”. Uma homenagem à esposa. Um amor que ficou mundialmente conhecido naquele dia. O então capitão, com 32 anos, não pensava em parar.</p>
+			<div class="quadro">
+				<img src="https://www.rbsdirect.com.br/imagesrc/35702934.jpg?w=700" alt='"Regina, eu te amo"' class="imagem">
+			</div>
+			<h3>A Copa do 7 a 1 (Brasil-2014)</h3>
+			<p>Ah, Copa do Mundo, nós te recebemos tão bem, e veja as lembranças que você nos deixou. O plano em 2014 era apagar o Maracanazo da memória da torcida. Por vias tortas, pode-se dizer que o objetivo foi alcançado. Sem Neymar, exilado da Copa por uma grave lesão nas costas sofrida contra a Colômbia, nas quartas de final, e mexido também na defesa, com a suspensão do capitão Thiago Silva, a seleção sofreu a pior derrota da sua tão vitoriosa história em Mundiais: 7 a 1 para a Alemanha, na semifinal, no Mineirão. Os cinco gols sofridos em 29 minutos de jogo deixaram a torcida e o time completamente atordoados no primeiro tempo. No segundo, a Alemanha diminuiu o ritmo e ainda assim fez mais dois, e o gol solitário de Oscar, já no apagar das luzes, só pode ser chamado de "gol de honra" pela tradição futebolística.</p>
+			<div class="quadro">
+				<img src="https://imagens.ne10.uol.com.br/veiculos/_midias/png/2020/07/08/806x444/1_selecao-16265595.png" alt="7x1" class="imagem">
+			</div>
+			<h3>"É tetra, é teeeeetra" (Estados Unidos-1994)</h3>
+			<p>Só quem viveu a angústia da espera por um título mundial sabe o que significaram os gritos de "É tetra, é teeeeeetra" na transmissão da final da Copa do Mundo dos Estados Unidos-1994. Um grito que ficou entalado na garganta dos brasileiros por 24 anos, libertado por uma equipe talhada para ser campeã. O time montado por Parreira apostava nos craques Romário e Bebeto na frente e na determinação tática de uma geração talentosa e acostumada a vencer, com nomes como Raí, Zinho, Jorginho, Leonardo, Branco, Aldair, Dunga e Taffarel. Sempre no sufoco, sempre no limite, a seleção foi subindo degrau a degrau (1 a 0 nos EUA nas oitavas, 3 a 2 na Holanda nas quartas, 1 a 0 na Suécia na semifinal), embalada pela contagem regressiva do coordenador técnico Zagallo ("Faltam quatro jogos", "faltam três", "faltam dois"...). Quando faltava só um, a final contra a Itália, o Brasil não conseguiu sair do 0 a 0, mesmo dominando a partida, e pela primeira vez uma Copa do Mundo foi decidida nos pênaltis. Baresi já tinha chutado para fora, Taffarel já tinha defendido o chute de Massaro, mas foi a bola isolada por Roberto Baggio que garantiu a festa e o grito de todos os brasileiros: "É teeeeetra".</p>
+			<div class="quadro">
+				<img src="https://www.rbsdirect.com.br/imagesrc/16708119.jpg?w=700" alt='"É teeeeeetra"'class="imagem">
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="rodape">
+			<p class="colaboradoresTit">Colaboradores:</p>
+			<div class="colaboradores">
+				<p>Espinha</p>
+				<p>Jota</p>
+				<p>Brandão</p>
+			</div>
+			<div class="datas"> 
+				<div class="data2">
+					Iniciado na data de: 27/08/2022
+				</div>
+				<div class="data"></div>
+			</div>
+			<p class="copyright">©MetadeDosTheBoys</p>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		diaMesAno=dataHoje();
+		function dataHoje(){
+			data=new Date();
+			dia=data.getDate();
+			mes=data.getMonth()+1;
+			ano=data.getFullYear();	
+			return [dia,mes,ano]
+		}
+		$(document).ready(function(){
+			$(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+		})
+		$(document).ready(function(){
+			$("#slide img:eq(0)").addClass("ativo").show();
+			var texto = $(".ativo").attr("alt");
+			$("#slide").prepend("<p>"+texto+"</p>");
+		})
+		setInterval(slide,4000);
+		function slide(){
+			if($(".ativo").next().length!=0){
+				$(".ativo").fadeOut().removeClass("ativo").next().fadeIn().addClass("ativo");	
+			}else{
+				$(".ativo").fadeOut().removeClass("ativo");
+				$("#slide img:eq(0)").fadeIn().addClass("ativo");
+			}
+
+			var texto = $(".ativo").attr("alt");
+			$("#slide p").hide().html(texto).delay(500).fadeIn();	
+			
+		}
+		$("#txtIndex").click(function(){
+			$(location).prop('href','index.html');
+		})
+		$("#txtSobre").click(function(){
+			$(location).prop('href','SOBRE.html');
+		})
+		$("#txtContato").click(function(){
+			$(location).prop('href','form.html');
+		})
+		$("#txtCatar").click(function(){
+			$(location).prop('href','paginaCatar.html');
+		})
+		$("#txtRivalidades").click(function(){
+			$(location).prop('href','rivalidades.html');
+		})
+		function mudaTema(){
+        	document.body.classList.toggle("dark")
+        }
+	</script>
+</body>
+</html>

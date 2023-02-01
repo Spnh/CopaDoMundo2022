@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>                                                         
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo G</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+            font-family: arial;
+        }
+        h1{
+             margin-top: 80px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .grupos{
+            display: flex;
+            justify-content: space-around;
+        }
+        .nomeGrupos{
+            margin-top: 15px;
+           
+        }
+        .tabela{
+            /*width: 30%;
+            height: auto;
+            margin: auto;*/
+        }
+        .styled-table {
+            max-width: 80%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: auto;
+            font-family: sans-serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #8e1a3d;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,.styled-table td {
+            padding: 12px 15px;
+            text-align: center;
+            
+        }
+
+        styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8e1a3d;
+        }
+        .nomePais{
+            font-weight: bold;
+        }
+        .secaoPaises{
+            margin: 15px;
+        }
+        .descPais{
+            margin-bottom:30px;
+            max-width: 80%;
+            text-align: justify;
+        }
+        /*menu*/
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            position: fixed;
+            top: 0px;
+            margin-left: 30%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color: #8e1a3d;
+            color: white;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            /*menu fixo e 100%*/
+        }
+        /*
+        .menu{
+            width: 40%;
+            height: 50px;
+            max-height: 50px;
+            max-width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            menu padrão
+        }*/
+        .comp{
+            text-align: center;
+            width: 25%;
+            max-width: 25%;
+            margin-top: 13px;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+
+        }
+        .lista{
+            display: none;
+        }
+        #grupos{
+            border: none;
+        }
+        #grupos:hover .lista{
+
+            display: block;
+            margin-top: 10px;
+            width: 150px;
+            background-color: white;
+            margin-left:30px;
+            list-style: none;
+            cursor: pointer;
+            border: 1px solid #8e1a3d;
+        }
+        li{
+            margin: 5px;
+            color: #8e1a3d;
+            border: 1px solid #8e1a3d;
+        }
+        li:hover{
+            
+            background:rgb(211, 206, 206);
+            -moz-box-shadow:0 3px 10px 0 rgb(255, 255, 255);
+            -webkit-box-shadow:0 3px 10px 0 rgb(221, 221, 221);
+            text-shadow:0px 0px 5px rgb(36, 36, 36);
+
+        }
+
+     .txtComp{
+            font-size: 110%;
+            cursor: pointer;
+
+        }
+        .txtComp:hover{
+            border-bottom: 1px solid rgb(211, 206, 206);
+        }
+         /*RODAPÉ*/
+            .rodape{
+                background-color: #8e1a3d;
+                color: white;
+
+                margin-top: 70px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+                .linkVideo{
+                    color: black;
+                    
+                    font-weight: bold;
+                }
+    </style>
+</head>
+<body>
+    <div class="cabecalho">
+             <!--MENU-->
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <label class="txtComp" id="txtSobre">Sobre</label>
+                </div>
+                <div class="comp" id="index">
+                    <label class="txtComp" id="txtIndex">Index</label>
+                </div>
+                <div class="comp" id="contato">
+                    <label class="txtComp" id="txtContato">Contato</label>
+                </div>
+                <div class="comp" id="grupos">
+                    <label class="txtComp" id="txtGrupos">Grupos</label>
+                        <div class="lista">
+                            <li id="grupoA">Grupo A</li>
+                            <li id="grupoB">Grupo B</li>
+                            <li id="grupoC">Grupo C</li>
+                            <li id="grupoD">Grupo D</li>
+                            <li id="grupoE">Grupo E</li>
+                            <li id="grupoF">Grupo F</li>
+                            <li id="grupoG">Grupo G</li>
+                            <li id="grupoH">Grupo H</li>
+                        </div>
+                </div>
+            </div>       
+           
+    </div>
+        <div class="container">
+            <h1 class="titulo">Grupo G</h1>
+            <div class="tabela">
+                <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>CLASSIFICAÇÃO</th>
+                        <th>Pontos</th>
+                        <th>Jogos</th>
+                        <th>Vitorias</th>
+                        <th>Empate</th>
+                        <th>Derrota</th>
+                        <th>Gols feitos</th>
+                        <th>Gol sofridos </th>
+                        <th>Saldo de gol</th>
+                        <th>Porcentagem</th>
+                        <th>Ultimos Jogos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row">
+                        <td>
+                            <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/07/16/Brasil_rgYHF6Z.svg" alt="imagem Brasil"><label class="nomePais">Brasil</label>
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/10/Camar%C3%B5es.svg" alt="image Camarões"> <label class="nomePais">Camarões</label> 
+
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/15/Su%C3%AD%C3%A7a.svg" alt="imagem Suíça"><label class="nomePais">Suíça</label></td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="iconePais"src="https://s.sde.globo.com/media/organizations/2019/09/02/Servia.svg" alt="imagem Sérvia"><label class="nomePais">Sérvia</label> 
+                        </td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+            <div class="secaoPaises">
+                <h2>Brasil</h2>
+                <p class="descPais">recordista em conquistas em Copas do Mundo, com cinco títulos invictos (1958, 1962, 1970, 1994 e 2002) e quatro títulos da Copa das Confederações FIFA (1997, 2005, 2009 e 2013). Dentre outras conquistas importantes, a seleção detém nove títulos da Copa América (1919, 1922, 1949, 1989, 1997, 1999, 2004, 2007 e 2019). Conquistou ainda quatro Copa das Confederações FIFA (1997, 2005, 2009 e 2013), competição na qual também é a maior vencedora da história. Nos Jogos Olímpicos de 2016, sediados no Rio de Janeiro, conquistou pela primeira vez a medalha de ouro, vencendo a seleção alemã nos pênaltis. O feito se repetiu em 2021, no Japão quanto conquistou a medalha de ouro no futebol pela segunda vez. A Seleção Brasileira é muito lembrada quando se fala de futebol arte já que, desde 1958 engrandece o futebol mundial com grandes nomes que com a amarelinha impressionaram e fizeram história. Pelé lidera a longa lista de craques brasileiros, considerado um dos maiores jogadores de todos os tempos. Contemporâneo de Pelé, Garrincha, o eterno "anjo das pernas tortas" de dribles desconcertantes, abrilhantou os gramados com seu futebol. Outros grandes que encantaram não só o Brasil mas o mundo foram Didi, Nilton Santos, Djalma Santos, Rivellino, Gérson, Jairzinho, Carlos Alberto, Tostão, Júnior, Zico, Sócrates, Falcão, Taffarel, Romário, Bebeto, Cafu, Roberto Carlos, Ronaldo, Rivaldo, Ronaldinho, Kaká, Adriano e atualmente o Neymar.
+                <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=4rCSECctXvM">Classificação da seleção do Brasil</a>
+                </p>
+                <h2>Camarões</h2>
+                <p class="descPais">
+                    A Seleção Camaronesa é uma das melhores da África, com reconhecimento internacional. Muitos de seus jogadores estão espalhados pelo mundo e encantam os espectadores com sua habilidade e alegria em jogar.
+                    O maior título do futebol camaronês é a medalha de ouro obtida nos Jogos Olímpicos de Verão de 2000. Na Copa do Mundo FIFA, seu melhor resultado foi o 7º lugar em 1990, quando surpreendeu e encantou a todos com seu futebol, principalmente o seu maior craque, Roger Milla, que aos 38 anos de idade, ainda roubava a cena. Já em relação a Campeonato Africano das Nações, eles têm 5 títulos, sendo o último em 2017. No Futebol Feminino, ganhou a medalha de ouro nos Jogos Pan-Africanos de 2011.
+                    <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=zXrITrDNtkg">Classificação da seleção de Camarôes</a>
+                </p>
+
+                <h2>Suíça</h2>
+                <p class="descPais">Em 2006, a Suíça conseguiu um recorde na história das Copas do Mundo, ao ser eliminada da competição sem sofrer nenhum gol, perdendo para a Ucrânia nos pênaltis, sem converter sequer um único pênalti – tornando-se a primeira seleção na história das Copas a registrar tal feito. Eles não sofreram gols até a segunda partida da fase de grupos da Copa do Mundo 2010 (incluindo a vitória por 1-0 na primeira partida da competição contra a eventual campeã Espanha), quando sofreram gol aos 29 minutos do segundo tempo contra o Chile, estabelecendo um recorde em Copas do Mundo de minutos consecutivos sem sofrer gols. A Suíça sediou a Eurocopa 2008 juntamente com a Áustria, participando pela terceira vez da competição. Tal como aconteceu nas duas exibições anteriores, o país não passou da fase de grupos. O maior artilheiro da seleção é o ex-atacante Alexander Frei. A 5ª edição da Copa do Mundo, em 1954, foi sediada pela Suíça, e foi vencida pela Alemanha Ocidental por 3-2 contra a Hungria. Na disputa pelo 3º lugar, a Áustria superou o Uruguai por 3-1. A Suíça foi eliminada pelos austríacos nas quartas-de-final, por 7x5. O melhor resultado da Suíça em Copas do Mundo foi um 6º lugar no mundial de 1950.
+                <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=TJ5ljL14oO0">Classificação da seleção da Suiça</a></p>
+
+                <h2>Sérvia</h2>
+                <p class="descPais">A Seleção Sérvia de Futebol representa a Sérvia em competições internacionais desde a dissolução de Sérvia e Montenegro, em 2006. Tanto a FIFA quanto a UEFA consideram a Seleção Sérvia como a sucessora direta e única das equipes da Seleção Iugoslava e da Seleção Servo-Montenegrina
+                Sucessora natural da Seleção Servo-Montenegrina de Futebol, que, por sua vez, já era sucessora da Seleção Iugoslava de Futebol. Na Copa de 2010, primeira copa disputada como nação independente, não correspondeu às expectativas e foi eliminada na primeira fase.Mas o time surpreendeu a todos quando aplicou uma vitória de 1 a 0 na forte Seleção Alemã de Futebol. Em 2014,durante as Eliminatórias para a Eurocopa 2016,a Sérvia e a Seleção Albanesa de Futebol protagonizaram um episódio controverso de violência no futebol.O jogo teve que ser cancelado enquanto a Sérvia fazia 3 a 0 na Albânia.No dia seguinte,a FIFA concedeu três pontos a Albânia.Como forma de punição,o jogo seguinte entre as duas equipes (Sérvia 2X1 Albânia)teve estádio fechado e sem público.
+                <a target="alt" class="linkVideo" href="https://www.youtube.com/watch?v=ZLXzSnjdGok">Classificação da seleção da Sérvia</a>    
+                </p>
+            </div>
+            
+            <footer>
+        <div class="rodape">
+            <p class="colaboradoresTit">Colaboradores:</p>
+            <div class="colaboradores">
+                <p>Espinha</p>
+                <p>Jota</p>
+                <p>Brandão</p>
+            </div>
+           <div class="datas"> 
+            <div class="data2">
+                Iniciado na data de: 27/08/2022
+            </div>
+            <div class="data"></div>
+        </div>
+            <p class="copyright">©MetadeDosTheBoys</p>
+        </div>
+    </footer>
+           <script type="text/javascript">
+                diaMesAno=dataHoje();
+            function dataHoje(){
+                data=new Date();
+                dia=data.getDate();
+                mes=data.getMonth()+1;
+                ano=data.getFullYear(); 
+                return [dia,mes,ano]
+            }
+            $(document).ready(function(){
+               $(".data").text("Data de hoje: "+dia+"/"+mes+"/"+ano);
+            })
+                //Menu
+                $("#txtIndex").click(function(){
+                    $(location).prop('href','index.html')
+                });$("#txtSobre").click(function(){
+                    $(location).prop('href','SOBRE.html')
+                });$("#grupoA").click(function(){
+                    $(location).prop('href','grupoA.html')
+                });$("#grupoB").click(function(){
+                    $(location).prop('href','grupoB.html')
+                });$("#grupoC").click(function(){
+                    $(location).prop('href','grupoC.html')
+                });$("#grupoD").click(function(){
+                    $(location).prop('href','grupoD.html')
+                });$("#grupoE").click(function(){
+                    $(location).prop('href','grupoE.html')
+                });$("#grupoF").click(function(){
+                    $(location).prop('href','grupoF.html')
+                });$("#grupoG").click(function(){
+                    $(location).prop('href','grupoG.html')
+                });$("#grupoH").click(function(){
+                    $(location).prop('href','grupoH.html')
+                });$("#txtContato").click(function(){
+                    $(location).prop('href','form.html')
+                })
+            </script> 
+</body>
+</html>

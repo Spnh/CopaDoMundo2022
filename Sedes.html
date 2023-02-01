@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sedes</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: sans-serif;
+            overflow-x: hidden; 
+
+        }
+        header{
+            margin-bottom: 30px;
+        }
+        .cabecalho{
+            width: 100%;
+            height: auto;
+            margin-top:15px ;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .titulo{
+            margin-left: 5px;
+        }
+        /*MENU*/
+        .menu{
+            width: 30%;
+            height: 30px;
+            max-height: 30px;
+            max-width: 30%;
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid grey;
+            margin-left: 35%;
+            box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+            background-color:WHITE ;
+            color: #8e1a3d;
+        }
+
+        .comp{
+            text-align: center;
+            width: 20%;
+            height: 100%;
+            max-width: 20%;
+            margin-bottom: 3px;
+            border-right: 1px solid grey;
+        }
+
+        #contato{
+            border: none;
+        }
+
+
+        .comp:hover{
+            background:#e6ebed;
+            -moz-box-shadow:0 3px 10px 0#ffffff;
+            -webkit-box-shadow:0 3px 10px 0 #dff1f7;
+            text-shadow:0px 0px 5px #8e1a3d;
+        }
+        .txtComp{
+            font-size: 90%;
+            cursor: pointer;
+            margin-top: 6px;
+
+
+        }
+        .txtComp:hover{
+            text-decoration: underline;
+
+        }
+        .left{
+            text-align: left;
+            margin-left: 31px;
+        }
+        .right{
+         text-align: right;
+         margin-right: 31px;
+     }
+     .center {
+        text-align: center;
+    }
+    
+    h1{
+        text-align: center;
+        font-size:35px;
+    }
+    p{  
+        font-size: 21px;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    #h2{
+        text-align: center; 
+        font-size:32px ;
+
+    }
+    h3{
+        text-align: center;
+        font-size: 29px;
+    }
+    pre{
+        text-align: justify;
+        font-size: 130%;
+    }
+    /* From uiverse.io by @mrhyddenn */
+
+
+    h1,h2,h3,p{
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .est{
+        font-size:24px;
+
+    }
+    .icone{
+        height:30px;
+        width: 30px;
+        vertical-align: middle;
+
+    }
+
+
+    .loader {
+        position: relative;
+        transform: scale(2);
+        border-radius: 50%;
+        border: 1px solid;
+        width: 30px;
+        height: 30px;
+        color: black;
+        margin: auto;
+    }
+    .loader::after {
+        position: absolute;
+        width: 0px;
+        height: 10px;
+        display: block;
+        border-left: 1px solid black;
+        content: '';
+        left: 14px;
+        border-radius: 1px;
+        top: 4px;
+        animation-duration: 2.5s;
+    }
+
+    .loader::before {
+        position: absolute;
+        width: 0px;
+        height: 10px;
+        display: block;
+        border-left: 1px solid black;
+        content: '';
+        left: 14px;
+        border-radius: 1px;
+        top: 4px;
+        animation-duration: 40s;
+    }
+    .loader::before,.loader::after {
+        transform-origin: bottom;
+        animation-name: dial;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes dial {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .linha{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+    .containerRight{
+        min-width: 70%;
+        max-width: 70%;
+        min-height: 300px;
+        background-color: lightgrey;
+        border-radius:25px ;
+        border: 1px black solid;
+        margin-right: 15px;
+        
+    }
+    .containerLeft{
+        width: 70%;
+        max-width: 70%;
+        min-height: 300px;
+        background-color: lightgrey;
+        border-radius:25px ;
+        border: 1px black solid;
+        margin-left: 30px;
+        
+    }
+    .paisDesc{
+        margin: 20px;
+        text-align: justify;
+    }
+    .tituloDesc{
+        font-weight:900;
+        text-align: center;
+    }
+    .rodape{
+                background-color: #8e1a3d;
+                color: white;
+                margin-top: 50px;
+                border-top: 1px solid #222122;
+                
+            }
+            .colaboradoresTit{
+                padding-left:15px;
+                padding-top: 15px;
+                font-weight: bold;
+            }
+            .colaboradores{
+                display: flex;
+                justify-content: space-around;
+            }
+            .datas{
+            display: flex;
+            justify-content: space-evenly;
+              
+            }
+            .data,.data2{
+                    font-size: 15px;
+                    margin-right: 5px;
+                    margin-top: 23px;
+                    margin-bottom: 5px; 
+                    /*border:1px solid black ;
+                    */
+                    display: flex;
+                    justify-content: center;
+                    padding-left: 0px;
+                }
+                .copyright{
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+                .quadro{
+                    width: 70%;
+                    max-width: 70%;
+                    min-height: 450px;
+                    border-radius:25px ;
+                    border: 1px black solid;
+                    margin-left: 30px;
+                }
+                .pagina{
+                    width: 100%;
+                    height: 100%;
+                    border-radius:25px ;
+                }
+                
+                .imgSlide{
+                width: 300px;
+                height: 300px;
+                max-height: 300px;
+                max-width: 300px;
+                }
+                .paisAnoImg{
+                    margin-left: 20px;
+                }
+                .secaoEstat{
+                    max-width: 50%;
+                    margin: auto;
+                }
+                .imgEstat{
+                    height: 250px;
+                    width: 250px;
+                    margin: auto;
+
+                }
+                .estatisticas p{
+                   
+                    margin-left: 60px;
+                }
+</style>
+<body>
+    <header>
+        <div class="cabecalho">
+           
+            <h1 class="titulo">Sedes Da Copa Do Mundo</h1>
+            <div class="menu">
+                <div class="comp" id="sobre">
+                    <section class="txtComp" id="txtSobre">Sobre</section>
+                </div>
+                <div class="comp" id="index">
+                    <section class="txtComp" id="txtIndex">Index</section>
+                </div>
+                <div class="comp" id="paginaCatar">
+                    <section class="txtComp" id="txtCatar">Catar</section>
+                </div>
+                <div class="comp" id="paginaBrasil">
+                    <section class="txtComp" id="txtBrasil">Brasil</section>
+                </div>
+                <div class="comp" id="contato">
+                    <section class="txtComp" id="txtContato">Contato</section>
+                </div> 
+            </div>      
+
+        </div>
+        <hr>
+    </header>
+    <!-- <p>Diversos paises pelo mundo ja foram sede da maior competição do mundo a baixo alguns desses paises Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore amet in officia iusto earum explicabo cum tempore facere omnis fugit laudantium itaque eos, aut ab quod ipsum animi consectetur doloribus! Lorem ipsum dolor sit amet consectetur adipisicing elit. class in delectus ipsam nostrum tempore earum voluptatem reiciendis! Incclassunt laborum expedita modi voluptatibus ab quas, dolores quam ducimus, earum illo quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio amet beatae repellendus vitae quasi consequuntur vel quia voluptate fuga molestiae. Ad iusto sit omnis. Doloribus officiis reprehenderit cum possimus aspernatur!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. class distinctio in cupclassitate, voluptas reprehenderit beatae dolore nisi consequuntur? Inventore et, aliquam sit ipsam facilis reiciendis class praesentium odit fugit totam.
+    </p>
+    <br> -->
+        <div class="linha"> 
+            <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Uruguai</h2>
+            <a href="#1"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Uruguay_1930_World_Cup.jpg/200px-Uruguay_1930_World_Cup.jpg"></a>
+            </div>
+
+            <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Uruguai 1930</section>
+                 Para a primeira edição sda Copa do Mundo,o Uruguai foi escolhido como sede.Isso aconteceu durante o Congresso Extraordinário da FIFA de 18/07/1929,em Barcelona,Espanha. Essa escolha não foi por acaso:o país reunia diversos fatores a seu favor:além de ser bicampeão olímpico (1924 e 1928),tinha o apoio total do governo,que,inclusive,pagou os custos de viagem e hospedagem de todas as seleções e construiu o Estádio Centenário que tinha capacidade para 70 mil pessoas,e,por fim,a FIFA tinha o interesse em afastar qualquer influência do Comitê Olímpico Internacional (COI),principal entidade esportiva da Europa,levando o campeonato para a América do Sul onde ele não tinha grande representatividade.Não houve eliminatórias,qualquer um dos 46 filiados da época poderia se inscrever e participar da Copa do Mundo.Mas,por questões políticas e econômicas,os europeus decidiram boicotar o torneio.Para evitar que o campeonato fosse um fracasso completo,sem nenhuma seleção europeia, foi necessário uma intervenção do presidente da FIFA, Jules Rimet.Somente após isso,França,Bélgica,Romênia e Iugoslávia,se inscreveram.Os demais pioneiros eram Estados Unidos,México,Brasil,Argentina,Chile, Bolívia,Peru e Paraguai,além do anfitrião Uruguai,13 seleções no total.O destaque do torneio foi a Seleção Uruguaia,que estava no ápice da melhor geração de futebolistas da história da Celeste Olímpica que contava com as estrelas Leandro Andrade,Héctor "Manco" Castro,Héctor Scarone,Pedro Cea,José Nasazzi,Pedro Petrone e Santos Urdinarán,que eram todos integrantes das delegações campeãs olímpicas de 1924 e 1928 e fizeram bonito de novo na Copa de 1930.A final Uruguai X Argentina foi uma das mais emocionantes da história, com a seleção da casa abrindo o placar no início,seguido de empate e a virada argentina antes dos 40 minutos do 1º tempo.Na segunda etapa a Celeste Olímpica mostrou sua garra empatando e virando o jogo.O título foi consolidado aos 44 minutos do 2º tempo,quando "Manco" Castro marcou, de cabeça, o 4º gol,fechando o jogo em 4X2. As bolas utilizadas na copa de 1930 no Uruguai foram a Tiento e T-Model.Alguns jogadores usavam gorro para amenizar o impacto dessa bola feita de painéis de couro duro costurado à mão,o famoso capotão era quase uma pedra.A T-Model de 12 gomos era revestida em couro,possuía uma abertura por onde entrava uma câmera de ar de borracha que depois era costurada com cadarço.Este ficava exposto,o que transformava a partida em um tormento aos jogadores,que sofriam na hora do cabeceio e das boladas.A bola absorvia a água da chuva e ficava com quase o dobro do peso. Na final entre Uruguai e Argentina,cada seleção exigiu jogar com seu próprio modelo da bola.No primeiro tempo,usou-se o modelo argentino Tiento,no segundo,o uruguaio T-Model
+            </div>
+        </div>
+     </div>
+    <div class="linha">
+            <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Itália 1934</section>
+                    durante O Congresso da FIFA, em Estocolmo, Suécia, a Itália foi escolhida sede da Copa do Mundo de 1934. Desde a confirmação da Copa de 1930 no Uruguai, o governo italiano, sob a ditadura de Benito Mussolini, vinha planejando a realização do primeiro Mundial de Futebol na Europa. Para tanto, foram construídos dois estádios e reformados outros cinco (de um total de oito utilizados). Todas as obras foram custeadas pela loteria nacional e pelo aumento de impostos, e contou com o apoio maciço da população. Diferentemente da Copa anterior, desta vez houve um grande interesse europeu e 22 seleções deste continente se inscreveram, totalizando 32 ao redor do mundo. Como a FIFA limitou a 16 vagas, foi necessário criar um sistema de classificação através de eliminatórias regionais. As vagas foram assim distribuídas: 12 para a Europa, duas para a América do Sul, uma para a América do Norte e Caribe e uma para África e Ásia. A principal ausência foi a do campeão Uruguai, que em retaliação ao boicote europeu em 1930, sequer se inscreveu para as eliminatórias. Dentre os classificados, destacavam-se a Áustria, não à toa apelidada de Wunderteam (Time Maravilha), uma das melhores seleções do século XX, com seu centroavante Mathias Sindelar, a Espanha, do goleiro Ricardo Zamora, e a Tchecoslováquia, do atacante Oldrich Nejedly e do goleiro Frantisek Planicka. Somando-se a essas, é claro, estava a anfitriã Itália, que não mediu esforços para montar um time de respeito. Sob a direção do jornalista Vittorio Pozzo, a Seleção Italiana somou a boa base da Juventus de Turim, seis sul-americanos naturalizados (cinco argentinos e um brasileiro, Amphilóquio Marques Guarisi, o Filó). Os demais classificados foram: Suécia, Hungria, Suíça, Romênia, Holanda, Bélgica, França, Brasil, Argentina, Egito (primeiro africano a jogar a Copa do Mundo) e Estados Unidos. Itália e Espanha se enfrentaram nas quartas-de-final, em dois jogos duríssimos. No primeiro deles, um empate em 1X1 no tempo normal e 0X0 na prorrogação. No dia seguinte, o segundo, um jogo de desempate, que acabou classificando a Itália pelo placar de 1X0. Na semifinal, a Itália sofreu muito para ganhar da Áustria por 1X0. E na final, a Squadra Azzurra só conseguiu garantir o título de campeão mundial na prorrogação, uma vitória pelo placar mínimode 1X0, com gol de Angelo Schiavio, após empate por 1X1 no tempo normal. A conquista foi muito explorada pelo ditador Mussolini, algo que voltaria a ser feito por vários regimes autoritários ao longo da história das Copas. A bola utilizada na Copa de 1934 na Itália, não tinha um nome oficial. Ela foi fabricada por uma empresa de material esportivo da cidade de Roma chamada ECAS.
+                </div>
+            </div>
+            <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Itália</h2>
+            <a href="#4"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/3/37/WorldCup1934poster.jpg" alt=""></a>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>França</h2>
+            <a href="#3"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/1938_fifa_worldcup_poster.jpg/200px-1938_fifa_worldcup_poster.jpg" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">França 1938</section>
+                 Para a Copa do Mundo de 1938, três países apresentaram-se como candidatos a sediar o torneio: Argentina (defendendo o rodízio entre os continentes), Alemanha (interessada em repetir o sucesso político italiano) e a França do presidente da FIFA Jules Rimet, que, sem surpresa alguma, foi a escolhida em votação no Congresso da FIFA em Berlim, dia 13de agosto de 1936. Mais uma vez foram feitos grandes investimentos na infraestrutura do país, como a ampliação do Estádio Colombes e a construção do estádio de Bordeaux, o Parque Lescure. O governo francês e Rimet queriam uma Copa livre de incidentes políticos, somente futebol, uma contraposição à Copa de 1934 (palco para a propaganda fascista) e aos Jogos Olímpicos de 1936 (patrocinados pelo regime nazista).Infelizmente, isso foi impossível. Começou com o boicote da Argentina (que perdeu a disputa para sediar a Copa) e do Uruguai (ainda por conta do boicote das seleções europeias feito na Copa de 1930). A isso, se somaram vários países das Américas que também desistiram e, no final, Brasil e Cuba classificaram-se sem precisar passar por eliminatórias. A Espanha, submersa na Guerra Civil, também ficou de fora. O Japão, em guerra com a China, desistiu de disputar as eliminatórias, o que classificou automaticamente seu adversário, as Índias Holandesas (Indonésia), que se tornou o primeiro asiático numa Copa do Mundo. Por último, a Áustria, que conseguiu se classificar, mas, a 80 dias da abertura da Copa, foi anexada pela Alemanha. Quem se beneficiou foi a Suécia, adversária dos austríacos já no mundial, e que ganhou por W.O., passando para as quartas-de-final sem precisar ir a campo. Os demais classificados foram: Bélgica, Holanda, Hungria, Noruega, Polônia, Romênia, Suíça e Tchecoslováquia. Além da anfitriã França e da Itália, ultima campeã do mundo. Quando, finalmente, a bola rolou, os destaques ficaram para o emocionante Brasil 6X5 Polônia, com os poloneses empatando o jogo aos 44 minutos do 2º tempo, fazendo com que a vitória brasileira só viesse na prorrogação, 2X1; e nos jogos-desempates, onde tivemos duas zebras: a Suíça eliminando a favorita Alemanha, enquanto a estreante Cuba eliminou a Romênia de seu terceiro mundial. Nas quartas-de-final, ambas foram eliminadas (por Hungria e Suécia, respectivamente), enquanto a campeã Itália eliminou a França, e Brasil e Tchecoslováquia empataram por 1X1, em um dos jogos mais violentos de todos os temos, chamado de "A Batalha de Bordeaux", que teve três expulsões, 14 contundidos, e dois tiveram fraturas (Frantisek Planicka e Oldrich Nejedly). No jogo-desempate, vitória brasileira por 2X1. Apesar da simpatia da torcida francesa pelos brasileiros, a Itália eliminou a sensação sul-americana e decidiu a Copa contra a Hungria. Com um time renovado (só quatro campeões de 1934), mais forte e com um genial Silvio Piola ao lado de Giuseppe Meazza, a Squadra Azzurra conquistou o bicampeonato mundial, ganhando por 4X2, e colocou Vittorio Pozzo como o único técnico a conquistar duas vezes a Copa do Mundo. O público vaiou muito os bicampeões, principalmente depois do capitão Meazza fazer a saudação fascista, após receber o troféu do presidente francês Albert Lebrun. Os torcedores talvez fossem menos hostis se soubessem o teor do telegrama mandado por Mussolini aos jogadores italianos: "Vincere o morire" (Vencer ou Morrer). Simples assim. A bola utilizada na Copa de 1938 na França, não tinha um nome oficial. Ela foi produzida por uma fábrica francesa chamada Allen.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Brasil 1950</section>
+                    Os estádios já estavam prontos na época, devido à paixão dos brasileiros por futebol. O Brasil foi escolhido por unanimidade como anfitrião na época, sendo um sucesso no sentido de infraestrutura a instalações e exemplo para o mundo. Muitos atribuem essa situação a Getúlio Vargas e sua administração, que incentivava o esporte como extensão da educação. Contudo, deve-se destacar que o Brasil viu, em 1947, a Fifa adiar a competição em um ano para que as seleções da Europa pudessem se reestruturar – a Segunda Guerra Mundial arrasou o continente e deixou o mundo sem Copas desde 1938. Foi, inclusive, por causa dos efeitos do conflito que a entidade decidiu levar o Mundial para a América do Sul e o Brasil, como candidato único, foi o eleito.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Brasil</h2>
+            <a href="#4"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/8/8c/World-cup-poster-brazil-1950.jpg/200px-World-cup-poster-brazil-1950.jpg" alt=""></a>
+        </div>        
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Suíça</h2>
+            <a href="#5"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/3/33/WorldCup1954logo.jpg" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Suiça 1954</section>
+                 A Copa do Mundo FIFA de 1954 foi a quinta edição da Copa do Mundo FIFA de Futebol, que ocorreu de 16 de junho até 4 de julho. Em comemoração ao 50º aniversário da FIFA, o evento foi sediado na Suíça, onde encontra-se a sede da FIFA; o país foi oficialmente selecionado como anfitrião em julho de 1946. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 11 delas europeias (Suíça, Hungria, Áustria, Inglaterra, Alemanha Ocidental, Iugoslávia, França, Itália, Tchecoslováquia, Bélgica e Escócia), 3 americanas (México, Brasil e Uruguai) e 2 asiáticas (Turquia e Coreia do Sul). Esta edição foi a que teve a maior média de gols de todas as copas, com 140 gols em 26 partidas, uma média de 5,38 gols por partida. Este recorde foi proporcionado principalmente pelos resultados do Grupo 2, que tinha a Hungria, a Alemanha Ocidental, a Turquia e a Coreia do Sul, tendo goleadas em todas as partidas (Alemanha Ocidental 4 – 1 Turquia; Hungria 9 – 0 Coreia do Sul; Hungria 8 – 3 Alemanha Ocidental; Turquia 7 – 0 Coreia do Sul; Alemanha 7 – 2 Turquia). Além disso, houve resultados como Uruguai 7 – 0 Escócia, Áustria 5 – 0 Tchecoslováquia, Alemanha 6 – 1 Áustria e Áustria 7 – 5 Suíça, esta última sendo a partida com o maior número de gols em todas as Copas. A copa contou com grandes jogadores, como Fritz Walter, Max Morlock, Hans Schäfer e Helmut Rahn da Alemanha Ocidental, Ernst Ocwirk da Áustria, Julinho Botelho, Didi e Djalma Santos do Brasil, Roque Máspoli, Juan Schiaffino, José Santamaría e Obdulio Varela, capitão do Uruguai, Gyula Grosics, Nándor Hidegkuti, József Bozsik, Zoltán Czibor, Sándor Kocsis e Ferenc Puskás da Hungria, sendo este último considerado o melhor jogador da competição, um dos melhores da história do Real Madrid, e um dos melhores da história do futebol mundial. A Copa do Mundo FIFA de 1954 teve como seleções finalistas a Hungria, que havia vencido o Uruguai (atual campeão do mundo) na semifinal e até então era invicta e, ao final do campeonato, marcara 27 gols em 5 jogos, média de 5,4 gols por partida, ainda não superada por nenhuma outra seleção; e a Alemanha Ocidental, que havia goleado a Áustria na semifinal e, ao final da Copa, marcara 25 gols em 6 jogos, média de 4,17 gols por partida. A final tomou lugar em 4 de julho de 1954, às 17h, no Estádio Wankdorf, com um público de aproximadamente 60 mil pessoas. A partida, cujo árbitro era o inglês William Ling, iniciou-se com a Hungria marcando 2 gols e terminou com a virada histórica da Alemanha, atingindo o placar de 3 – 2. Era o primeiro título que a Alemanha conseguira e a Hungria não disputou mais finais de mundiais. Este é o único título conquistado por uma seleção que viria a sediar um mundial mais tarde.
+            </div>
+        </div>
+    </div>
+    <div class="linha"> 
+            <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Suécia 1958</section>
+                    A Copa do Mundo FIFA de 1958 foi a sexta edição da Copa do Mundo FIFA de Futebol, que ocorreu de 10 de junho até 29 de junho de 1958. O evento foi sediado na Suécia, tendo partidas realizadas nas cidades de Borås, Eskilstuna, Estocolmo, Gotemburgo, Halmstad, Helsingborg, Malmö, Norrköping, Örebro, Sandviken, Solna, Uddevalla e Västerås. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 12 delas europeias (Suécia, Alemanha Ocidental, Áustria, França, Tchecoslováquia, Hungria, União Soviética, Iugoslávia, Inglaterra, Irlanda do Norte, Escócia e País de Gales) e 4 americanas (Brasil, Argentina, Paraguai e México).
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Suecia</h2>
+            <a href="#6"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/3/34/Copa_do_Mundo_FIFA_de_1958.jpg" alt=""></a>
+        </div>
+    </div>    
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300"data-aos-easing="ease-in-sine">
+            <h2>Chile</h2>
+            <a href="#7"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/3/31/WorldCup1962logo.jpg" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Chile 1962</section>
+                A Copa do Mundo FIFA de 1962 foi a sétima edição da Copa do Mundo FIFA de Futebol, que ocorreu de 30 de maio até 17 de junho. O evento foi sediado no Chile, tendo partidas realizadas nas cidades de Arica, Rancagua, Viña del Mar e Santiago (Ñuñoa). Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 10 delas europeias (União Soviética, Iugoslávia, Alemanha Ocidental, Itália, Suíça, Tchecoslováquia, Espanha, Hungria, Inglaterra e Bulgária) e 6 americanas (Chile, Brasil, Uruguai, Argentina, Colômbia e México).
+                As seleções da Bulgária e da Colômbia faziam sua primeira participação na competição. A edição teve duas grandes goleadas: Iugoslávia 5 x 0 Colômbia e Hungria 6 x 1 Bulgária, além do empate com o maior número de gols em Copas: União Soviética 4 x 4 Colômbia, partida na qual foi marcado o primeiro (e até hoje, único) gol olímpico em Copas do Mundo. A copa contou com grandes jogadores, como Djalma Santos, Amarildo, Vavá e Garrincha do Brasil, Viliam Schrojf e Josef Masopust da Tchecoslováquia e Karl-Heinz Schnellinger e Uwe Seeler da Alemanha Ocidental.
+                A grande campeã desta copa foi a Seleção Brasileira de Futebol que, como campeã da Copa anterior de 1958, não havia participado das eliminatórias pois já tinha vaga garantida. A seleção contou com muitos jogadores da Copa da Suécia, como Gilmar, Djalma Santos, Nílton Santos, Didi, Zagallo, Vavá, Pepe, Zito, Bellini, Garrincha e Pelé. Na primeira partida do Brasil, o jogador Pelé, que neste ano viria a ser campeão mundial pelo Santos FC, marcou seu primeiro gol, mas se contundiu no segundo jogo contra a Tchecoslováquia, não podendo continuar no campeonato. A partir deste ocorrido, muitos dizem que esta foi a "Copa de Garrincha", considerado pela maioria como o melhor jogador da Copa e um dos grandes responsáveis pela conquista brasileira, sagrando-se artilheiro da competição ao lado de Vavá (que tornou-se o grande goleador dos dois primeiros títulos mundiais do Brasil) e de outros quatro jogadores.A final da Copa do Mundo FIFA de 1962 foi disputada pela Tchecoslováquia, que havia eliminado a Iugoslávia e a Hungria; e o Brasil, que havia eliminado o Chile e a Inglaterra. A partida foi realizada em 17 de junho às 14h30min, Estádio Nacional do Chile, com um público estimado em 68 679 pessoas. Sob o apito do árbitro soviético Nikolay Latyshev, Josef Masopust abriu o placar aos 15 minutos, porém, 2 minutos depois, Amarildo empata o jogo, que termina o primeiro tempo no 1 a 1. Aos 24 minutos do segundo tempo, Zito vira o jogo para a equipe brasileira e Vavá, 9 minutos depois, amplia a diferença, fechando o placar em 3 x 1. O capitão Mauro Ramos de Oliveira ergueu a taça Jules Rimet e o segundo título do Brasil em Copas do Mundo.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Inglaterra 1966</section>
+                    A Copa do Mundo FIFA de 1966 foi a oitava edição da Copa do Mundo FIFA de Futebol, que ocorreu de 11 de julho até 30 de julho. O evento foi sediado na Inglaterra, tendo partidas realizadas nas cidades de Birmingham, Liverpool, Londres, Manchester, Middlesbrough, Sheffield e Sunderland. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 10 delas europeias (Inglaterra, Itália, Alemanha Ocidental, Hungria, Suíça, Portugal, França, União Soviética, Bulgária e Espanha), 5 americanas (Brasil, Argentina, Chile, Uruguai e México) e 1 asiática (Coreia do Norte). As seleções da Coreia do Norte e de Portugal fizeram sua primeira participação na competição. A edição teve duas grandes goleadas, ambas feitas pela Alemanha Ocidental: 5 a 0 na Suíça e 4 a 0 no Uruguai. A Copa contou com grandes jogadores, como Bobby Moore e Gordon Banks da Inglaterra, Uwe Seeler e Franz Beckenbauer da Alemanha Ocidental, Eusébio de Portugal e Lev Yashin da União Soviética. A Inglaterra foi escolhida como anfitriã pela FIFA em agosto de 1960 para celebrar o centenário da The Football Association, a mais antiga associação de futebol do mundo, que ocorreu em 1963. Uma revelação da Copa foi a seleção de Portugal que, comandada pelo atacante Eusébio, realizou uma performance invicta na fase de grupos, bateu a Coreia do Norte nas quartas-de-final em uma partida em que os norte-coreanos abriram 3 a 0 e a seleção portuguesa, com quatro gols do "Pantera Negra" virou para 5–3, e foram derrotadas pela Inglaterra na semifinal. Na disputa do terceiro lugar, ainda venceram a União Soviética, equipe que se mostrara forte todo o campeonato. Eusébio terminou como artilheiro, com 9 gols marcados. A final foi disputada pela Inglaterra, que havia eliminado Portugal e a Argentina; e a Alemanha Ocidental, que eliminara a União Soviética e o Uruguai. A partida foi realizada em 30 de julho às 15h, no Estádio de Wembley em Londres, com um público estimado em 98 000 pessoas. Sob o apito do árbitro suíço Gottfried Dienst, o primeiro tempo terminou empatado em 1 a 1. Ao final dos 90 minutos, o placar era de 2 a 2. No minuto 98, Hurst marcou novamente; entretanto seu chute bateu no travessão, e quicou exatamente sobre a linha. Desde então, se debate se a bola realmente passou a linha, o que faria uma grande diferença, uma vez que se o placar permanecesse empatado, a Alemanha Ocidental talvez não permitisse o mesmo espaço a Hurst. A partida fechou com um terceiro gol deste, selando o primeiro título inglês em Copas do Mundo, tornando-se a primeira sede a vencer o torneio desde que a Itália o venceu em 1934.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Reino Unido</h2>
+            <a href="#8"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/8/89/1966.jpg/200px-1966.jpg" alt=""></a>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Mexico</h2>
+            <a href="#9"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/5/59/WorldCup1970logo.jpg" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">México 1970</section>
+                A Copa do Mundo de 1970 foi a 9ª edição da Copa do Mundo FIFA, que ocorreu de 31 de maio até 21 de junho. A competição, conquistada pelo Brasil, foi sediada no México, tendo partidas realizadas nas cidades de Guadalajara, León, Cidade do México, Puebla e Toluca. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo nove delas europeias (União Soviética, Bélgica, Itália, Suécia, Inglaterra, Romênia, Tchecoslováquia, Alemanha Ocidental e Bulgária), cinco americanas (México, El Salvador, Uruguai, Brasil e Peru), uma asiática (Israel) e uma africana (Marrocos). As seleções de El Salvador, Israel, e Marrocos faziam sua primeira participação na competição. A edição teve uma grande goleada: México 4-0 El Salvador. A Copa contou com grandes jogadores, como Lev Yashin, do União Soviética. Sepp Maier, Gerd Müller, Uwe Seeler, Karl-Heinz Schnellinger, Franz Beckenbauer e Wolfgang Overath, da Alemanha Ocidental. Dino Zoff, Giacinto Facchetti, Roberto Rosato, Sandro Mazzola, Luigi Riva, Gianni Rivera e Roberto Boninsegna, da Itália. Gordon Banks, Bobby Moore, Geoff Hurst, Martin Peters e Bobby Charlton, da Inglaterra. Teofilo Cubillas, do Peru. Mazurkiewicz e Pedro Rocha, do Uruguai. Pelé, Jairzinho, Tostão, Rivellino, Gérson, Clodoaldo, Piazza e Carlos Alberto Torres, do Brasil. Esta Copa ficou marcada por vários lances geniais de Pelé que não terminaram em gol, como uma cabeçada defendida pelo goleiro inglês Gordon Banks e que ficou conhecida como a Defesa do Século, o chute de antes do meio-de-campo contra o goleiro Viktor da Tchecoslováquia que ficou conhecido como "O Gol que o Pelé não Fez", além de um Drible de corpo contra o goleiro uruguaio Mazurkiewicz. Numa das semifinais desta Copa, ocorreu o chamado jogo do século, disputado entre as equipes da Alemanha Ocidental e da Itália. A partida permanecia 1–0 para a Itália até os 90 minutos, quando Karl-Heinz Schnellinger empatou a partida e levou a decisão para a prorrogação. Nessa prorrogação, ambas as seleções protagonizaram uma sucessão de viradas de placar até que a Itália firmou a vitória em 4–3. Esta partida é tida como a primeira e única em todas as Copas a ter cinco gols feitos na prorrogação. Além destas equipes, uma das seleções favoritas era o Brasil que, embora tenha tido um retrospecto ruim em 1966, montou uma equipe repleta de estrelas, como Pelé, Jairzinho, Tostão, Rivellino, Gérson, Clodoaldo, Piazza e Carlos Alberto Torres. Nesta edição, o Brasil venceu todos os jogos das eliminatórias e da Copa. Esta equipe mostrou ser uma das mais eficientes de todos os tempos e foi considerada a melhor de todos os tempos. A final desta edição foi disputada pelo Brasil, que havia eliminado o Uruguai e o Peru; e a Itália, que eliminara a Alemanha Ocidental e o México. A partida foi realizada em 21 de junho no Estádio Azteca na Cidade do México, com um público estimado em 108 000 pessoas. Sob o apito do árbitro alemão Rudolf Gloeckner, o primeiro tempo terminou empatado em 1–1. Ao final dos 90 minutos, o placar era de 4–1 para a equipe brasileira. O título serviu de propaganda política, quando o país estava no auge da ditadura militar brasileira. Este título também pôs o Brasil como a primeira seleção a ser tricampeã, confirmando a superioridade brasileira em relação ao futebol mundial. O capitão Carlos Alberto Torres levantou a Taça Jules Rimet entregue pela última vez em Copas, agora em caráter definitivo.
+            </div>
+        </div>       
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Alemanhã 1974</section>
+                    A Copa do Mundo FIFA de 1974 foi a décima edição da Copa do Mundo FIFA de Futebol, que ocorreu de 13 de junho até 7 de julho de 1974. O evento foi sediado na Alemanha Ocidental, que conquistou o título. A competição teve partidas realizadas nas cidades de Hamburgo, Hanôver, Gelsenkirchen, Dortmund, Düsseldorf, Frankfurt, Berlim Ocidental, Munique e Estugarda. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 9 delas europeias (Alemanha Ocidental, Alemanha Oriental, Iugoslávia, Escócia, Holanda, Suécia, Bulgária, Polônia e Itália), 5 americanas (Chile, Brasil, Uruguai, Argentina e Haiti), 1 africana (Zaire) e 1 oceânica (Austrália). As seleções da Alemanha Oriental, da Austrália, do Haiti e do Zaire faziam sua primeira participação na competição, sendo a participação dessa última marcada por diversas polêmicas dentro de campo durante o campeonato. A edição teve duas grandes goleadas: Haiti 0–7 Polônia e Iugoslávia 9–0 Zaire, sendo esta última, junto a Hungria 9–0 Coreia do Sul (em 1954) e Hungria 10–1 El Salvador (em 1982), as maiores goleadas em Copas do Mundo. A Copa de 1974 contou com grandes jogadores, como Grzegorz Lato e Kazimierz Deyna da Polônia, Ademir da Guia, Emerson Leão, Rivellino e Jairzinho do Brasil, Arie Haan, Willem van Hanegem, Ruud Krol, Rob Rensenbrink, Johnny Rep, Johan Neeskens e Johan Cruijff da Holanda e Sepp Maier, Berti Vogts, Paul Breitner, Hans-Georg Schwarzenbeck, Gerd Müller, Wolfgang Overath e Franz Beckenbauer da Alemanha, sendo Cruijff e Beckenbauer considerados dois dos melhores futebolistas da história do futebol mundial. A grande revelação desta copa foi a Seleção Holandesa de Futebol, que, sob a batuta de Rinus Michels, voltou à copa após 36 anos de ausência, desde a sua segunda participação, em 1938, na França, utilizando como bases o AFC Ajax, campeão intercontinental em 1972, e o Feyenoord, campeão intercontinental em 1970. A seleção era conhecida como "Laranja Mecânica" e "Carrossel Holandês", devido à tática de Michels de alternar os jogadores em suas posições. O destaque dessa equipe era Johan Cruijff, que atuava bem tanto na defesa, quanto no meio-campo ou no ataque. De longe, era a seleção favorita ao título, tanto por seu modo atordoante de jogar futebol quanto por ser responsável pela eliminação da seleção brasileira, que defendia o título, e contava com jogadores que atuaram na Copa de 1970, como Jairzinho e Rivellino. A Final da Copa do Mundo FIFA de 1974 foi disputada entre a Holanda e a Alemanha Ocidental. A partida foi realizada em 7 de julho às 16h, no Estádio Olímpico de Munique, com um público estimado em 75 200 pessoas. Com a vitória da Seleção Alemã, os jogadores Franz Beckenbauer, Sepp Maier, Wolfgang Overath, Jürgen Grabowski e Horst-Dieter Höttges, tornaram-se os 5 primeiros futebolistas a conquistar as medalhas de bronze, prata e de ouro em Copas do Mundo de futebol. O holandês Johan Cruijff foi eleito o melhor jogador da competição. De acordo com os dados do portal Opta Sports, na Copa do Mundo de 1974, Cruijff foi o jogador com mais dribles certos (34), chances criadas (36) e passes certos no terço final de campo (136) em toda competição. Na Copa do Mundo de 1974, Cruijff criou 5.1 oportunidades de gol por jogo. É o recorde da história das Copas de um jogador no mesmo torneio desde quando os dados da Opta Sports começaram a ser coletados em 1966.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Alemanha Ocidental</h2>
+            <a href="#10"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/FIFA_World_Cup_1974_-_emblem.svg/200px-FIFA_World_Cup_1974_-_emblem.svg.png" alt=""></a>
+        </div> 
+    </div>
+    <div class="linha ">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Argentina</h2>
+            <a href="#11"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/0/0b/Copa_do_Mundo_FIFA_de_1978.gif" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Argentina 1978</section>
+               A Copa do Mundo FIFA de 1978 foi a 11.ª Copa do Mundo FIFA disputada, e contou com a participação de dezesseis países. O campeonato ocorreu na Argentina, que conquistou seu primeiro título. Ao todo, 107 países participaram das eliminatórias. No grupo da Argentina, a Itália roubou a cena e venceu os seus três jogos da primeira fase: até venceu os donos da casa por 1–0. A Argentina venceu a Hungria e França (ambas por 2–1), e ficou com a segunda vaga. Neste grupo, França e Hungria foram eliminadas com derrotas nas duas primeiras rodadas, e jogaram em Mar del Plata. Pela definição da FIFA, a Hungria jogaria de branco e a França com o seu azul característico, mas a Federação Francesa, irritada com a organização por se considerar prejudicada pela arbitragem, mandou seu time também de branco como adversário, o que gerou uma grande confusão. Diante da orientação da FIFA que os húngaros tinham direito a jogar de branco, o árbitro Arnaldo Cezar Coelho exigiu que os franceses trocassem de modelo. Sem uniforme reserva no vestiário, vestiram a camisa do Kimberley, um clube amador de Mar del Plata. A França venceu a partida por 3–1. O Brasil tinha um time que incluía Zico e Roberto Rivellino. Empatou com a Suécia no primeiro jogo por 1–1, e no segundo, com a Espanha, por 0–0. Só se classificou ao vencer a Áustria no terceiro jogo, por 1–0. Mesmo com a derrota, a Áustria, que vencera os dois primeiros jogos, ficou com a outra vaga. A Espanha e a Suécia foram eliminadas. Os Países Baixos tiveram dificuldades em se classificar. Johan Cruijff, a estrela do time, recusou participar do torneio devido problemas familiares. O país venceu o Irã por 3–0, depois empatou com o Peru em 0–0 e perdeu da Escócia por 3–2. O Peru foi a grande sensação do grupo: venceu a Escócia por 3–1 e goleou o Irã por 4–1. A Alemanha Ocidental e a Polônia dividiram as vagas de seu grupo entre si sem maiores dificuldades. Neste grupo, a Tunísia fez história ao conquistar a primeira vitória de uma seleção africana em copas, fazendo 3–1 no México. Outro grande resultado da seleção africana foi um empate em 0–0 com a Alemanha Ocidental. Estavam na segunda fase: Alemanha Ocidental, Áustria, Itália e Países Baixos no grupo A; e Argentina, Brasil, Peru e Polónia no grupo B. Os Países Baixos reencontraram seu melhor futebol e golearam a Áustria por 5–1, empatou com a Alemanha Ocidental em 2–2 e ganhou da favorita Itália por 2–1, conseguindo uma vaga para a final. A Itália que foi a grande sensação da primeira fase com 100% de aproveitamento empatou com a Alemanha em 0–0, derrotou a Áustria por 1–0 e foi disputar o 3º lugar, por ficar em 2º lugar do grupo. No grupo de Brasil e Argentina houve escândalos. O Brasil, modificado com as entradas de Rodrigues Neto, Jorge Mendonça e Roberto Dinamite nos lugares de Edinho, Zico e Reinaldo, se recuperou da apatia da 1ª fase e venceu o Peru por 3–0. A Argentina passou pela Polônia por 2–0. Em Rosário, argentinos e brasileiros empataram. Este empate seria fatal para o Brasil. Na última rodada, a equipe venceu tranquilamente a Polônia por 3–1. Com este resultado, restava à Argentina vencer o Peru por 4 gols de diferença. A Argentina goleou o Peru por 6–0. O resultado do jogo mandou o Brasil para a decisão de 3º lugar, que venceria da Itália por 2–1. A final foi decidida no Estádio Monumental de Núñez, em Buenos Aires. A Argentina venceu os Países Baixos por 3–1 na prorrogação e conquistou seu primeiro título mundial. A organização do evento foi marcada por muitas falhas. Chegou-se mesmo a cogitar a transferência da Copa para a Europa. Em alguns lugares os estádios ficaram prontos na última hora, e por isso os gramados recém plantados se soltavam sob os pés dos jogadores. Enquanto a Argentina sediou quase todos os seus jogos em Buenos Aires, os principais rivais faziam um tour pelo país, se desgastando com longas viagens. Foi uma copa cercada de polêmicas, muito graças ao clima político da Argentina, que vivia uma ditadura militar que via na organização do torneio a oportunidade de popularizar o regime e promover a distração nacional dos problemas políticos e econômicos. Como forma simbolica de protesto, as equipes que cuidavam dos estadios que sediaram a copa do mundo pintaram as bases das traves de preto. Esta Copa ficou marcada também por ter sido a única em que a Seleção que terminou em 3.º colocado (neste caso, o Brasil), não recebeu nenhuma medalha. Segundo a CBF "não há registro de entrada ou recebimento das medalhas pelo 3º lugar na Copa do Mundo de 1978 na CBF. No acervo cadastrado, está apenas uma placa pela participação da Seleção Brasileira, independentemente da posição, dada a todos os participantes.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Espanha 1982</section>
+                    A Copa do Mundo FIFA de 1982 foi a 12.ª edição da Copa do Mundo FIFA. Foi a primeira a contar com 24 seleções, entre elas várias estreantes. No total, 105 países participaram das eliminatórias. O campeonato ocorreu na Espanha e teve como campeã a Itália. A seleção brasileira, comandada por Telê Santana com futebol ofensivo e goleador conquistou a Espanha e encantou o mundo. Jogadores como Leandro, Júnior, Toninho Cerezo, Paulo Roberto Falcão, Zico, Sócrates e Éder apresentaram um futebol de muita técnica, toque de bola vertical, lindos gols e muitos artilheiros no mesmo time, passando para a história como uma das melhores seleções de todos os tempos, mesmo não vencendo o campeonato. Outras grandes seleções marcaram presença na Espanha: a França de Michel Platini, Jean Tigana, Manuel Amoros, Dominique Rocheteau e Marius Trésor; a Alemanha de Karl-Heinz Rummenigge, Horst Hrubesch, Manfred Kaltz, Felix Magath e Paul Breitner. A Argentina com craques campeões do mundo como Daniel Passarella, Osvaldo Ardiles, Daniel Bertoni, Mario Kempes e a promessa de supercraque Diego Armando Maradona. Do lado da seleção italiana, que havia deixado uma ótima impressão em 1978, o experientíssimo Dino Zoff, Antonio Cabrini, Giuseppe Bergomi, Claudio Gentile, Gaetano Scirea, Francesco Graziani, Gabriele Oriali, Marco Tardelli, Bruno Conti, e aquele que seria o carrasco do Brasil na copa, Paolo Rossi.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Espanha</h2>
+            <a href="#12"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/0/07/Copa_do_Mundo_FIFA_de_19821982.jpg" alt=""></a>
+        </div>        
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Mexico</h2>
+            <a href="#13"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/d/dd/World_cup_Mexico_86_Logo_svg.png" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">México 1986</section>
+               A Copa (português brasileiro) ou Campeonato (português europeu) do Mundo FIFA de 1986 foi a 13ª Copa do Mundo disputada, e contou com a participação de 24 países divididos em seis grupos de quatro participantes cada um. De cada grupo os 2 primeiros colocados se classificavam diretamente às oitavas de final. Para completar as 16 seleções classificadas, os 4 terceiros colocados de melhor campanha conquistavam a vaga por índice técnico. No total 113 países participaram das eliminatórias. A Copa de 1986 seria disputada na Colômbia. Porém, os graves problemas econômicos deste país impediram os colombianos de serem os anfitriões do torneio. A FIFA ofereceu a Copa para o Brasil, os Estados Unidos e o Canadá, em 1982, mas os governos desses três países recusaram. Então, o Mundial foi aceito pelo México, escolhido em 1983 para sediá-lo mais uma vez. Nem mesmo os terremotos um ano antes puseram em risco a realização da copa. A Seleção Argentina de Futebol foi a campeã e Diego Maradona eleito o melhor jogador da competição. Dados do portal Opta Sports revelam que Maradona foi o jogador com mais assistências (5), chances criadas (27) e dribles certos (53) em toda competição. Os 53 dribles certos de Maradona em 1986 são o recorde da história das Copas de um jogador no mesmo torneio desde quando os dados da Opta Sports começaram a ser coletados em 1966.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Itália 1990</section>
+                    A Copa do Mundo FIFA de 1990 foi a décima quarta edição da Copa do Mundo FIFA de Futebol, que ocorreu de 8 de junho até 8 de julho de 1990. O evento foi sediado na Itália, tendo partidas realizadas nas cidades de Milão, Roma, Nápoles, Turim, Bari, Verona, Florença, Cagliari, Bolonha, Údine, Palermo e Gênova. A Itália foi o segundo país a sediar a competição por duas vezes (o primeiro foi o México, quatro anos antes). Além da anfitriã Itália e da então campeã mundial de 1986, Argentina (na época a seleção campeã da edição anterior se classificava automaticamente para a edição seguinte), se classificaram para o torneio a Alemanha Ocidental (que viria a se sagrar campeã dessa edição) Bélgica, Inglaterra, Escócia, Áustria, Suécia, Iugoslávia, Espanha, Países Baixos, União Soviética, Tchecoslováquia, Irlanda, Romênia, Camarões, Egito, Emirados Árabes, Coreia do Sul, Uruguai, Colômbia, Brasil, Costa Rica e Estados Unidos. Grandes estrelas do futebol mundial desfilaram pelos gramados italianos, como Gary Lineker, Paul Gascoigne, David Platt e Ian Wright da Inglaterra, Ronald Koeman, Frank Rijkaard, Marco Van Basten e Ruud Gullit da Holanda e Bodo Illgner, Andreas Brehme, Lothar Matthäus, Rudi Völler e Jürgen Klinsmann da Alemanha, Diego Maradona da Argentina, dentre outros. A Copa de 1990 entrou para a história como uma Copa de equipes defensivas, que jogavam apenas para alcançar o resultado - a média de gols, de apenas 2,21, registrou um recorde negativo que perdura até hoje. Essa situação levou à mudança de regras (mais notadamente a regra do recuo de bola), e à adoção de três pontos por vitória. Apesar disso, também foi uma Copa de grandes goleadas, como EUA 1-5 Tchecoslováquia e Alemanha 5-1 Emirados Árabes Unidos, e de grandes surpresas, como a vitória de Camarões sobre a Argentina logo na 1ª rodada do Mundial. A final da Copa do Mundo FIFA de 1990 foi disputada pela Argentina, que havia eliminado a Itália, a Iugoslávia e o Brasil; e a Alemanha Ocidental, que havia eliminado a Inglaterra, a Tchecoslováquia e os Países Baixos. A partida foi realizada em 8 de julho às 20h, no Estádio Olímpico de Roma, com um público de 73 603 pessoas. Sob o apito do árbitro mexicano Edgardo Codesal, Andreas Brehme converteu uma penalidade - até hoje muito contestada - aos 40 minutos do segundo tempo, trazendo o terceiro título da Alemanha Ocidental em Copas do Mundo. Foi a última copa disputada pelas seleções da União Soviética e Tchecoslováquia.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Itália</h2>
+            <a href="#14"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/a/a0/World_Cup_logo_Italia90.svg.png" alt=""></a>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Estado Unidos</h2>
+            <a href="#15"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/f/fb/WorldCupFIFA1994.png/200px-WorldCupFIFA1994.png" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Estados Unidos 1994</section>
+              A Copa do Mundo FIFA de 1994 foi a 15ª edição sediada nos Estados Unidos, sendo o 1º Mundial a ser realizado neste país. Apesar da pouca tradição norte-americana no futebol, foi este mundial que bateu todos os recordes de público, mantidos até os dias de hoje. Com um futebol extremamente eficiente e com um grupo muito unido liderado pelo polêmico craque Romário, a Seleção brasileira conquistou o quarto título mundial ao bater a Itália na final. O titulo do Brasil foi comemorado também como uma homenagem ao tricampeão mundial de Fórmula 1 Ayrton Senna, falecido em 1 de maio daquele ano. A edição foi aberta no estádio Soldier Field, em Chicago, no dia 17 de junho, com direito a performance da cantora Diana Ross. No mesmo dia, aconteceu o jogo de abertura entre a Alemanha (sua primeira Copa reunificada) contra a Bolívia. A seleção Alemã venceu o jogo por um magro 1–0, gol do atacante Jürgen Klinsmann. Nesse jogo, o craque boliviano Marco Etcheverry, que tinha tudo para se destacar, recebeu o primeiro cartão vermelho desta Copa ao agredir Lothar Matthäus,[1] fazendo jus ao apelido de "El Diablo". Estreante em copas, a Arábia Saudita mostrou ao mundo do futebol a que veio no terceiro jogo contra a Bélgica. Após receber a bola do campo de sua equipe, Saeed Al-Owairan decidiu partir para cima dos belgas e após driblar meio time, tocou na saída do experiente goleiro Michel Preud'homme, um dos melhores do mundo na época e que seria eleito o melhor daquela Copa,[2] marcando o mais belo gol do Mundial. O Brasil fez a seguinte campanha: duas vitórias e um empate na fase de grupos: 2–0 contra a Rússia, 3–0 contra Camarões e 1–1 contra a Suécia; nas oitavas de final derrotou os Estados Unidos por 1–0; nas quartas de final eliminou os Países Baixos por 3–2; na semifinal, 1–0 frente à Suécia; na grande final, o Brasil jogou contra a Itália, o jogo terminou empatado em 0–0 nos 90 minutos do tempo normal e na prorrogação. O Brasil conquistou o título após ganhar a disputa por pênaltis pelo placar de 3–2 e se tornou a primeira seleção tetracampeã mundial de futebol. Foi uma Copa do Mundo de grandes surpresas. A Bulgária, que até ali em 6 participações anteriores jamais havia vencido um jogo de Copa do Mundo, superou grandes favoritos, sendo a 2.ª colocada em um grupo que tinha a Argentina, além de eliminar em um jogo emocionante a Alemanha, até então a Campeã mundial defensora, por 2–1 nas quartas de final. Chegou à semifinal e terminou em 4.º lugar.
+            </div>
+        </div>
+        
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Fraça 1998</section>
+                     Copa do Mundo FIFA de 1998 foi a décima sexta edição da Copa do Mundo FIFA de Futebol e a primeira a contar com 32 seleções. Ocorreu de 10 de junho até 12 de julho de 1998. O evento foi sediado na França, pela segunda vez, tendo partidas realizadas nas cidades de Saint-Denis, Marselha, Paris, Lens, Lyon, Nantes, Toulouse, Saint-Étienne, Bordéus e Montpellier. Trinta e duas seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo quinze delas europeias, oito americanas, cinco africanas e quatro asiáticas. O torneio foi marcado por goleadas, entre elas França 4 x 0 Arábia Saudita, Espanha 6 x 1 Bulgária, Holanda 5 x 0 Coreia do Sul e Argentina 5 x 0 Jamaica. A final da Copa do Mundo FIFA de 1998 foi disputada pela França, que havia eliminado a Croácia, a Itália e o Paraguai; e o Brasil, que havia eliminado a Holanda, a Dinamarca e o Chile. A partida foi realizada em 12 de julho às 21 horas, no Stade de France, com um público estimado em oitenta mil pessoas. Sob o apito do árbitro marroquino Said Belqola, Zinédine Zidane marcou duas vezes no primeiro tempo e Emmanuel Petit ampliou aos 48 minutos do segundo tempo, terminando a partida em 3 a 0, derrotando a seleção brasileira, então a última campeã do mundo e única tetracampeã da época. O capitão francês Didier Deschamps levantou a taça do primeiro título da França em Copas do Mundo. Ele voltaria a conquistar um título mundial com a seleção francesa 20 anos depois, dessa vez como técnico, se juntando ao brasileiro Zagallo e ao alemão Franz Beckenbauer a ter conseguido esse feito como jogador e como treinador. A copa teve vários destaques, como Edwin van der Sar, Jaap Stam, Frank de Boer, Edgar Davids, Patrick Kluivert e Dennis Bergkamp da Holanda, Brian Laudrup e Michael Laudrup da Dinamarca, Gabriel Batistuta, Ariel Ortega e Verón da Argentina, David Beckham e Michael Owen da Inglaterra, Paolo Maldini e Christian Vieri da Itália, Davor Šuker da Croácia, Gamarra e Chilavert do Paraguai, Taffarel, Roberto Carlos, Cafu, Dunga, Rivaldo e Ronaldo Fenômeno do Brasil e Fabien Barthez, Lilian Thuram, Marcel Desailly, Laurent Blanc, Didier Deschamps, Youri Djorkaeff e Zinédine Zidane da França.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>França</h2>
+            <a href="#16"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/e/ec/World_Cup_1998_FIFAlogo.png/200px-World_Cup_1998_FIFAlogo.png" alt=""></a>
+        </div>    
+    </div> 
+
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Coreia/Japão</h2>
+            <a href="#17"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/e/e9/World_Cup_FIFA_2002_logo.png" alt=""></a>
+        </div>
+         <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Coreia/Japão 2002</section>
+              Copa do Mundo (português brasileiro) ou Campeonato do Mundo de Futebol (português europeu) FIFA de 2002 foi a décima sétima edição da Copa do Mundo FIFA de Futebol que reuniu 32 equipes entre 31 de maio a 30 de junho. O Brasil conquistou pela quinta vez o título mundial, depois de derrotar a Alemanha na final. Foi a primeira vez que dois países sediaram unidos o evento, a primeira vez que três seleções — França, Japão e Coreia do Sul — estavam classificadas automaticamente e a primeira vez que uma edição da Copa não aconteceu na Europa ou nas Américas. Foi a última edição do evento onde o campeão anterior do torneio garantia vaga direta na edição seguinte da competição. A França, campeã da edição de 1998, foi a última privilegiada por este sistema. A partir do final deste Mundial, a seleção campeã — no caso, o Brasil — teria que garantir vaga na próxima competição jogando as Eliminatórias, tendo somente o país-sede do próximo Mundial vaga garantida no certame seguinte, sem a necessidade de disputar as fases classificatórias. Também foi a última edição onde a partida de abertura era realizado pelo campeão do torneio anterior — a partir de 2006, a abertura seria realizada pelo país-sede
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Alemanhâ 2006</section>
+                     Copa do Mundo FIFA de 1998 foi a décima sexta edição da Copa do Mundo FIFA de Futebol e a primeira a contar com 32 seleções. Ocorreu de 10 de junho até 12 de julho de 1998. O evento foi sediado na França, pela segunda vez, tendo partidas realizadas nas cidades de Saint-Denis, Marselha, Paris, Lens, Lyon, Nantes, Toulouse, Saint-Étienne, Bordéus e Montpellier. Trinta e duas seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo quinze delas europeias, oito americanas, cinco africanas e quatro asiáticas. O torneio foi marcado por goleadas, entre elas França 4 x 0 Arábia Saudita, Espanha 6 x 1 Bulgária, Holanda 5 x 0 Coreia do Sul e Argentina 5 x 0 Jamaica. A final da Copa do Mundo FIFA de 1998 foi disputada pela França, que havia eliminado a Croácia, a Itália e o Paraguai; e o Brasil, que havia eliminado a Holanda, a Dinamarca e o Chile. A partida foi realizada em 12 de julho às 21 horas, no Stade de France, com um público estimado em oitenta mil pessoas. Sob o apito do árbitro marroquino Said Belqola, Zinédine Zidane marcou duas vezes no primeiro tempo e Emmanuel Petit ampliou aos 48 minutos do segundo tempo, terminando a partida em 3 a 0, derrotando a seleção brasileira, então a última campeã do mundo e única tetracampeã da época. O capitão francês Didier Deschamps levantou a taça do primeiro título da França em Copas do Mundo. Ele voltaria a conquistar um título mundial com a seleção francesa 20 anos depois, dessa vez como técnico, se juntando ao brasileiro Zagallo e ao alemão Franz Beckenbauer a ter conseguido esse feito como jogador e como treinador. A copa teve vários destaques, como Edwin van der Sar, Jaap Stam, Frank de Boer, Edgar Davids, Patrick Kluivert e Dennis Bergkamp da Holanda, Brian Laudrup e Michael Laudrup da Dinamarca, Gabriel Batistuta, Ariel Ortega e Verón da Argentina, David Beckham e Michael Owen da Inglaterra, Paolo Maldini e Christian Vieri da Itália, Davor Šuker da Croácia, Gamarra e Chilavert do Paraguai, Taffarel, Roberto Carlos, Cafu, Dunga, Rivaldo e Ronaldo Fenômeno do Brasil e Fabien Barthez, Lilian Thuram, Marcel Desailly, Laurent Blanc, Didier Deschamps, Youri Djorkaeff e Zinédine Zidane da França.
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Alemanha</h2>
+            <a href="#18"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/d/d7/FIFA_World_Cup_2006_Logo.png" alt=""></a>
+        </div>    
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Africa do sul</h2>
+            <a href="#19"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/0/0d/2010_FIFA_World_Cup.svg/230px-2010_FIFA_World_Cup.svg.png" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">África do Sul 2010</section>
+              Copa do Mundo FIFA de 2010 foi a décima nona edição da Copa, que ocorreu de 11 de junho até 11 de julho. O evento foi sediado na África do Sul, tendo partidas realizadas em 9 cidades. Trinta e duas seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 13 delas europeias, 8 americanas, 6 africanas, 5 asiáticas (contando com a Austrália) e 1 oceânica. As seleções da Sérvia e da Eslováquia faziam sua primeira participação na competição como países independentes. A edição teve apenas uma grande goleada: Portugal 7–0 Coreia do Norte. Porém, também contou com goleadas da Seleção Alemã sobre grandes seleções: 4–1 na Inglaterra e 4–0 na Argentina. Os melhores jogadores do mundo do ano anterior não tiveram um bom retrospecto na copa, dando lugar para outros bons jogadores aparecerem: David Villa, Xabi Alonso e Andrés Iniesta da Espanha; Bastian Schweinsteiger, Mesut Özil e Thomas Müller da Alemanha; Diego Forlán do Uruguai; Wesley Sneijder e Arjen Robben dos Países Baixos. A grande campeã desta Copa foi a Espanha que havia conquistado a Eurocopa de 2008 em cima da Alemanha, ostentado o 3º lugar na Copa das Confederações FIFA de 2009 e era a 2ª colocada dentre todas as seleções no Ranking Mundial da FIFA. No elenco, havia Iker Casillas, eleito o melhor goleiro do mundo em 2009 e 2008, Xavi Hernández e Andrés Iniesta, respectivamente 3º e 5º melhores jogadores do mundo em 2009, Fernando Torres, David Villa e Cesc Fàbregas, respectivamente os 3º, 10º e 15º melhores jogadores do mundo em 2008. No caminho até a final, a Espanha eliminou Portugal, Paraguai e Alemanha nas fases finais. A equipe que se sagrou vice-campeã foi a dos Países Baixos, que havia eliminado o Uruguai, o Brasil e a Eslováquia. A partida foi realizada em 11 de julho às 20h30min, no Soccer City, em Joanesburgo, com um público estimado em 84 490 pessoas. Sob o apito do árbitro inglês Howard Webb, a partida terminou o primeiro e o segundo tempos sem gols. No segundo tempo da prorrogação, aos 116 minutos de jogo, faltando 4 minutos para levar a decisão para a disputa de pênaltis, Andrés Iniesta marcou o gol da vitória e do título espanhol; o capitão Iker Casillas levantou a taça do primeiro título da Espanha em Copas do Mundo, finalizando a sequência de títulos conquistados pela seleção.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="containerLeft"  data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <div class="paisDesc">
+                    <section class="tituloDesc">Brasil 2014</section>
+                     A Copa do Mundo FIFA de 2014 (português brasileiro) ou Campeonato do Mundo da FIFA 2014 (português europeu) foi a vigésima edição deste evento esportivo, um torneio internacional de futebol masculino organizado pela Federação Internacional de Futebol (FIFA), que ocorreu no Brasil, anfitrião da competição pela segunda vez. Com doze cidades-sede, o campeonato começou a ser disputado no dia 12 de junho e terminou em 13 de julho. A edição de 2014 foi a quinta realizada na América do Sul, depois de a Argentina ter sediado o torneio pela última vez no continente em 1978. O Brasil foi a 2.ª e última sede do torneio mundial escolhida através da política de alternância de continentes, que foi iniciada a partir da escolha da África do Sul como a sede da edição anterior. As seleções nacionais de 31 países avançaram através de competições de qualificação, que começaram em junho de 2011, para participar com o país anfitrião – o Brasil –, no torneio final. Um total de 64 jogos foram jogados em doze cidades de todo o Brasil em estádios novos ou reconstruídos, iniciando o torneio com uma fase de grupos. Pela primeira vez em uma Copa do Mundo, as partidas usaram a tecnologia goal-line.[5] No dia 15 de junho, na partida entre França e Honduras, ocorreu o primeiro gol oficial a utilizar o sistema. Com o país anfitrião, todas as equipes campeãs do mundo desde a primeira Copa do Mundo, em 1930 (Uruguai, Itália, Alemanha, Inglaterra, Argentina, França e Espanha) qualificaram-se para esta competição. Nesta edição, a Alemanha sagrou-se campeã pela repetindo suas vitórias nas edições de 1954, 1974 e 1990. Foi a primeira vez que uma seleção europeia conquistou o título no continente americano. As quatro Copas do Mundo anteriores sediadas pela América do Sul foram todas ganhas por seleções sul-americanas. De acordo com estatísticas da FIFA, esta foi a Copa mais poluente da história (2,72 milhões de toneladas métricas de dióxido de carbono), mas, ao mesmo tempo, a mais sustentável (os estádios construídos ou modernizados para a Copa adotaram tecnologias para aproveitar a água de chuva, a radiação UV, fontes renováveis de energia e iluminação de baixo consumo energético, entre outras).[9] Em uma conferência realizada na Cidade do Panamá, em setembro de 2014, e organizada pela FIFA, os representantes de 45 federações afiliadas à Confederação de Futebol da América do Norte, Central e Caribe e à Confederação Sul-Americana de Futebol avaliaram o trabalho realizado na Copa de 2014 como "o melhor futebol já visto na história dos Mundiais".
+                </div>
+            </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Brasil</h2>
+            <a href="#20"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/4/48/Mundial-2014-Brasil-1.svg/160px-Mundial-2014-Brasil-1.svg.png" alt=""></a>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Russia</h2>
+            <a href="#21"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/6/67/2018_FIFA_World_Cup.svg/220px-2018_FIFA_World_Cup.svg.png" alt=""></a>
+        </div>
+        <div class="containerRight"  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+               <div class="paisDesc">
+                <section class="tituloDesc">Russia</section>
+              A Copa do Mundo FIFA de 2018 (português brasileiro) ou o Campeonato Mundial de Futebol FIFA de 2018 (português europeu) foi a vigésima primeira edição deste evento esportivo, um torneio internacional de futebol masculino organizado pela Federação Internacional de Futebol (FIFA), que ocorreu na Rússia, anfitriã da competição pela primeira vez. Com onze cidades-sede, o campeonato começou a ser disputado em 14 de junho e terminou em 15 de julho. A edição de 2018 foi a primeira realizada no Leste Europeu, a décima primeira realizada na Europa, depois de a Alemanha ter sediado o torneio pela última vez no continente em 2006. Esta edição da Copa do Mundo, juntamente com a Universíada de Verão de 2013 e os Jogos Olímpicos de Inverno de 2014, que também foram realizados em território russo, foram os primeiros eventos esportivos de importância mundial realizados no país desde os Jogos Olímpicos de Verão de 1980. A FIFA escolheu a Rússia por causa do aumento do interesse da população russa no futebol, graças a investimentos financeiros no esporte, do aumento da importância da Primeira Liga Russa e a migração de jogadores estrangeiros para o país, além da ascensão econômica da Rússia após a dissolução da União Soviética em 1991. Os outros países que se candidataram à sede da competição foram a Inglaterra e as candidaturas conjuntas de Bélgica/Países Baixos e Espanha/Portugal. O governo russo pretendia entregar todas as obras para a Copa do Mundo da FIFA 2018 um ano antes do torneio. Joseph Blatter, ex-presidente da Federação Internacional de Futebol, afirmou que as organizações estavam mais avançadas em comparação com as obras do Brasil, que sediou a edição anterior. Entrou para a história por ter sido a Copa do Mundo mais cara da história até então, com um custo total de 14,2 bilhões de dólares. Foi também a primeira edição de uma Copa a fazer uso do Árbitro Assistente de Vídeo (VAR). Em 28 de março de 2017, a seleção brasileira foi a primeira além do país-sede, Rússia, a se classificar para a Copa do Mundo de 2018. Foi nesta edição que Islândia e Panamá fizeram seu debut em Copas do Mundo. Além disso, pela quarta vez nas últimas cinco edições, a Seleção que foi campeã na Copa anterior foi eliminada na fase de grupos (fato que levou a imprensa mundial a chamar de "Maldição das Campeãs"), e também a primeira vez que a Alemanha não se classificou para a segunda fase de uma Copa do Mundo, sendo que a mesma sempre vinha alcançando, pelo menos, as quartas-de-final da competição. Além disso, nenhuma seleção africana conseguiu avanço a partir da fase de grupos, e todas as equipes que se classificaram para a Copa via repescagem europeia chegaram às oitavas de final da competição, algo inédito até então.
+            </div>
+        </div>
+    </div>
+    <div class="linha">
+        <div class="quadro"  class="left" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"> 
+           <a href="paginaCatar.html">
+            <img class="pagina" src="https://media.discordapp.net/attachments/1022130701325320204/1025525015552213043/unknown.png?width=873&height=409">
+               
+           </a>
+            <!-- <iframe class="pagina"src="paginaCatar.html" title="Copa do Catar"></iframe> -->
+        </div>
+        <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+            <h2>Catar</h2>
+            <a href="#22"><img class="imgSlide" src="https://upload.wikimedia.org/wikipedia/pt/thumb/e/e3/2022_FIFA_World_Cup.svg/200px-2022_FIFA_World_Cup.svg.png" alt=""></a>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      $("#txtIndex").click(function(){
+            $(location).prop('href','index.html');
+        })
+        $("#txtSobre").click(function(){
+            $(location).prop('href','SOBRE.html');
+        })
+        $("#txtContato").click(function(){
+            $(location).prop('href','form.html');
+        })
+        $("#txtPaginaBrasil").click(function(){
+            $(location).prop('href','paginaBrasil.html');
+        })
+        $("#txtCatar").click(function(){
+            $(location).prop('href','paginaCatar.html');
+        })
+        $("#txtRivalidades").click(function(){
+            $(location).prop('href','rivalidades.html');
+        })
+  </script>
+
+</body>
+</html>
